@@ -3,7 +3,7 @@
 import React from "react";
 import "./_Hero.scss";
 import { usePathname } from "next/navigation";
-// import Button from "./_components/buttons/Button";
+import Button from "../../buttons/Button";
 
 interface TitleProps {
     title: string;
@@ -16,18 +16,20 @@ export default function Hero({ title, backgroundImage }: TitleProps) {
 
     if (pathname === '/') {
         return (
-            <section className="hero" style={style}>
-                <h1 style={style}>
-                    <span className="hero__span">{title}</span>bliv stærk
+            <section className="hero home" style={style}>
+                <h1 className="hero__h1 home">
+                    <span className="hero__span">{title}</span>get strong
                 </h1>
                 <p className="hero__p">
-                    Det bedste fitnesscenter — hvor styrke og sundhed vokser sammen.
+                    The best fitness center — where strength and health grow together.
                 </p>
-                {/* <Button>
-                    text=""
-                    href=""
-                    className="button transparent"
-                </Button> */}
+                <Button
+                    text="Sign up now"
+                    href="/signup"
+                    className="transparent"
+                    classNamePlay="orange"
+                />
+
 
             </section>
 
@@ -35,8 +37,8 @@ export default function Hero({ title, backgroundImage }: TitleProps) {
     }
 
     return (
-        <section className="hero" style={style}>
-            <h1>{title}</h1>;
+        <section className="hero subpage" style={style}>
+            <h1 className="hero__h1 subpage">{title}</h1>;
         </section>
     )
 }

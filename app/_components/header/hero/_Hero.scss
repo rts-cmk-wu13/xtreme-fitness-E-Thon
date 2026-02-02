@@ -1,0 +1,46 @@
+@use "../../../style/variables/typography" as typo;
+@use "../../../style/variables/spacing" as space;
+@use "../../../style/variables/color" as color;
+
+.hero {
+    height: fit-content;
+    grid-area: 1 / 1 / 1 / 1;
+
+    // background:
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__h1 {
+        width: fit-content;
+
+        &.home {
+            border-left: solid 8px color.$white;
+        }
+
+        &.subpage {
+            margin: 0 auto;
+        }
+    }
+
+    &__span {
+        display: block;
+        font-size: typo.$p-55-size;
+    }
+
+    &__p {
+        color: color.$white;
+        font-size: typo.$p-32-size;
+        width: 60%;
+        margin: space.$spacing-54 0 space.$spacing-83 0;
+
+    }
+
+    &.home {
+        padding: space.$spacing-516 space.$pct-spacing-166 space.$spacing-126;
+    }
+
+    &.subpage {
+        padding: space.$spacing-220 0;
+    }
+}

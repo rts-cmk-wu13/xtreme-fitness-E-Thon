@@ -1,0 +1,31 @@
+@use "../../style/placeholders/buttons";
+@use "../../style/variables/spacing" as space;
+@use "../../style/mixins/mixins" as mix;
+
+.button {
+    @extend %btn;
+    @include mix.grid-button;
+    &.transparent {
+        @extend %transparent-btn;
+    }
+    &.orange {
+        @extend %orange-btn;
+    }
+}
+
+.play {
+    @extend %btn-play;
+    @include mix.flex-between;
+    color: none;
+    justify-self: end;
+    &.orange{
+        @extend %orange-play;
+    }
+    &.white{
+        @extend %white-play;
+    }
+    svg {
+        width: space.$spacing-16;
+        height: space.$spacing-16;
+    }
+}
