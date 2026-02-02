@@ -1,0 +1,51 @@
+@use "../../../style/variables/color" as color;
+@use "../../../style/variables/spacing" as space;
+@use "../../../style/variables/typography" as typo;
+@use "../../../style/mixins/mixins" as mix;
+@use "../../../style/placeholders/base";
+
+.navigation {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+
+    &__nav {
+        @include mix.flex-between;
+        // padding: 0 space.$pct-spacing-240;
+    }
+
+    &__logo {
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &__ul {
+        list-style: none;
+        @include mix.flex-between;
+
+        li {
+            // padding: 0 space.$spacing-24;
+        }
+
+    }
+
+    &__link {
+        @include mix.button-reset;
+        font-size: typo.$nav-link-size;
+        font-weight: typo.$nav-link-weight;
+        color: color.$white;
+        text-decoration: none;
+        white-space: nowrap;
+        // padding-bottom: space.$spacing-20;
+
+        &:hover {
+            color: color.$orange;
+            position: relative;
+        }
+    }
+}

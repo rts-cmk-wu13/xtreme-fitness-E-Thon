@@ -1,0 +1,43 @@
+@use "../variables/color" as color;
+@use "../variables/spacing" as space;
+@use "../variables/typography" as typo;
+
+// Base button styles
+%btn {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-weight: typo.$btn-weight;
+  // padding: space.$spacing-20 space.$spacing-42;
+  background: none;
+  width: fit-content;
+  align-self: end;
+  border-radius: 50%;
+  color: color.$white;
+  
+  &:hover {
+    opacity: 0.5;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+%trans-btn {
+  border: solid 4px color.$white;
+}
+%orange-btn {
+  background-color: color.$gradient-bg;
+}
+
+%white-play {
+  color: transparent;
+  background-color: color.$bg;
+}
+%orange-play {
+  color: color.$white;
+  background-color: color.$linear-btn;
+}

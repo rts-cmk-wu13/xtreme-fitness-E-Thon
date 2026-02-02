@@ -1,0 +1,11 @@
+@use "../../style/variables/color" as color;
+@use "../../style/mixins/mixins" as mix;
+@use "../../style/placeholders/base";
+
+.header {
+    @extend %base;
+    max-width: 100vw;
+    width: 100%;
+    height: auto;
+    @include mix.flex-col;
+}

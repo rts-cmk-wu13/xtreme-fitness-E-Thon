@@ -1,0 +1,78 @@
+@use "../variables/color" as color;
+@use "../variables/typography" as typo;
+@use "../variables/spacing" as space;
+
+// Font families
+body,
+h1,
+h2,
+h3,
+h4,
+textarea {
+  font-family: var(--font-ubuntu), sans-serif;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-teko), sans-serif;
+  font-style: normal;
+}
+
+// Headings
+h1 {
+  font-size: typo.$h1-size;
+  font-weight: typo.$h1-weight;
+  text-transform: uppercase;
+  color: color.$white;
+}
+
+h2 {
+  font-size: typo.$h2-size;
+  font-weight: typo.$h2-weight;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: typo.$h3-size;
+  font-weight: typo.$h3-weight;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: typo.$h4-size;
+  font-weight: typo.$h4-weight;
+  text-transform: uppercase;
+  color: color.$black;
+}
+
+// Body text
+p,
+address {
+  font-size: typo.$p-16-size;
+  font-weight: typo.$p-weight;
+  font-style: normal;
+  margin-block: 0;
+}
+
+a,
+.link,
+button {
+  font-size: typo.$nav-link-size;
+  font-weight: typo.$nav-link-weight;
+}
+
+//font colors by class
+.black {
+  color: color.$black;
+}
+
+.white {
+  color: color.$white;
+}
+
+.orange {
+  color: color.$orange;
+}

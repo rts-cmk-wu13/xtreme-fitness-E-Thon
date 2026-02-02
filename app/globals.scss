@@ -1,0 +1,15 @@
+@use "./style/variables/spacing" as space;
+@use "./style/variables/color" as color;
+@use "./style/mixins/mixins" as mix;
+@use "./style/placeholders/base";
+@use "./style/fonts/fonts";
+
+body {
+  @extend %base;
+  background: url('/bg/pattern_bg.jpg') center fixed;
+}
+
+// SECTIONS
+.section {
+  margin: 0 auto;
+}

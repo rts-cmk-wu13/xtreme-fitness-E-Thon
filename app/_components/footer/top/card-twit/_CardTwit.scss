@@ -1,0 +1,20 @@
+@use "../../../../style/mixins/mixins" as mix;
+@use "../../../../style/variables/color" as color;
+@use "../../../../style/variables/spacing" as space;
+
+.twitter {
+    @include mix.flex-start;
+    gap: space.$spacing-29;
+    &__icon {
+        font-size: 2rem;
+        color: color.$pink-text-color;
+    }
+    &__p {
+        margin-bottom: space.$spacing-12;
+    }
+    &__time {
+        color: color.$pink-text-color;
+        font-size: 1rem;
+        margin-bottom: space.$spacing-80;
+    }
+}

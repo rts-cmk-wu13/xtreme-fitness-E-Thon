@@ -1,0 +1,77 @@
+@use "../variables/spacing" as space;
+@use "../variables/color" as color;
+
+// Flexbox start
+@mixin flex-start {
+  display: flex;
+  justify-content: start;
+}
+
+// Flexbox end
+@mixin flex-end {
+  display: flex;
+  justify-content: end;
+}
+
+// Flexbox centering
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+// Flex between (space-between)
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+// Flex column
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+// Flex row
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+// Responsive grid
+@mixin responsive-grid-two {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  gap: space.$spacing-24;
+}
+
+// @mixin responsive-grid($min-width: space.$spacing-240, $row-height: space.$spacing-328) {
+//   width: 100%;
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+//   grid-rows: auto;
+//   grid-auto-rows: $row-height;
+// }
+
+// Button reset
+@mixin button-reset {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+// Container
+@mixin container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}

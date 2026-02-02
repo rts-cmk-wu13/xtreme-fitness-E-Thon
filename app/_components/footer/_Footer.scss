@@ -1,0 +1,10 @@
+@use "../../style/variables/typography" as typo;
+@use "../../style/variables/spacing" as space;
+@use "../../style/mixins/mixins" as mix;
+@use "../../style/placeholders/base";
+
+.footer {
+  @extend %base;
+  padding: space.$spacing-52 space.$pct-spacing-240;
+  @include mix.bg-gradient-image('/bg/footerbg.jpg');
+}

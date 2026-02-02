@@ -1,0 +1,31 @@
+@use "../../../style/variables/spacing" as space;
+@use "../../../style/variables/typography" as typo;
+@use "../../../style/mixins/mixins" as mix;
+
+.top {
+    @include mix.flex-between;
+    align-items: start;
+    margin: space.$spacing-42 0 space.$spacing-170;
+
+
+    &__article.left {
+        flex: 1;
+    }
+
+    &__location>h4,
+    &__opening>h4 {
+        margin: space.$spacing-60 0 space.$spacing-12;
+    }
+
+    &__article.right {
+        @include mix.flex-between;
+        align-items: start;
+        flex: 2;
+        gap: space.$spacing-35;
+    }
+
+    &__posts>h4,
+    &__tweets>h4 {
+        margin-top: 0;
+    }
+}

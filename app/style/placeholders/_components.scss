@@ -1,0 +1,40 @@
+@use "../variables/spacing" as space;
+@use "../variables/typography" as typo;
+@use "../variables/color" as color;
+
+// Input placeholder
+%input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  // padding: space.$spacing-35 space.$spacing-24;
+  border: 1px solid color.$border-color;
+  background: color.$bg;
+  color: color.$black;
+  // font-size: typo.$p-18-size;
+
+  &:focus {
+    outline: none;
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &::placeholder {
+    color: color.$black;
+  }
+}
+
+// Link placeholder
+%link {
+  color: color.$pink-text-color;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+  }
+}

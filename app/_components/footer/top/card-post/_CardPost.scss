@@ -1,0 +1,16 @@
+@use "../../../../style/mixins/mixins" as mix;
+@use "../../../../style/variables/color" as color;
+@use "../../../../style/variables/spacing" as space;
+
+.post {
+    @include mix.flex-start;
+    gap: space.$spacing-29;
+    &__p {
+        margin-bottom: space.$spacing-12;
+    }
+    &__date {
+        color: color.$pink-text-color;
+        font-size: 1rem;
+        margin-bottom: space.$spacing-80;
+    }
+}
