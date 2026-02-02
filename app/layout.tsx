@@ -3,6 +3,7 @@ import { ubuntu } from "./style/fonts/fonts";
 import "./globals.scss";
 import Header from "./_components/header/Header";
 import Navigation from "./_components/header/navigation/Navigation";
+import Hero from "./_components/header/hero/Hero";
 // import Footer from "./_components/footer/Footer";
 
 export const metadata: Metadata = {
@@ -24,13 +25,7 @@ export default function RootLayout({
     <html lang="en" className={ubuntu.variable}>
       <body
         className="antialiased">
-        <Header>
-          <Navigation />
-        </Header>
-        <main className="main">
-          {children}
-        </main>
-        {/* <Footer /> */}
+        {children}
       </body>
     </html>
   );

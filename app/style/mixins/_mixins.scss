@@ -50,6 +50,12 @@
   grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
   gap: space.$spacing-24;
 }
+@mixin grid-button {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 4rem;
+  align-items: center;
+}
 
 // @mixin responsive-grid($min-width: space.$spacing-240, $row-height: space.$spacing-328) {
 //   width: 100%;

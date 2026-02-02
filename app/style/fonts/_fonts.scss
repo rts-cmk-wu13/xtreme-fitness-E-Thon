@@ -4,10 +4,6 @@
 
 // Font families
 body,
-h1,
-h2,
-h3,
-h4,
 textarea {
   font-family: var(--font-ubuntu), sans-serif;
   font-style: normal;
@@ -19,6 +15,7 @@ h3,
 h4 {
   font-family: var(--font-teko), sans-serif;
   font-style: normal;
+  margin-block: 0;
 }
 
 // Headings
