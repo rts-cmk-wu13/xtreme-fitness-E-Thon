@@ -1,31 +1,93 @@
 @use "../../../style/variables/spacing" as space;
+@use "../../../style/variables/color" as color;
 @use "../../../style/variables/typography" as typo;
 @use "../../../style/mixins/mixins" as mix;
 
 .top {
     @include mix.flex-between;
-    align-items: start;
-    margin: space.$spacing-42 0 space.$spacing-170;
+    padding: space.$spacing-24 0 space.$spacing-12;
+    align-items: center;
+    border-bottom: 1px solid color.$grey-line;
 
+    &__info {
+        @include mix.responsive-grid;
+        gap: space.$pct-spacing-50;
+        max-width: 65rem;
+        margin: 0 auto;
+        height: fit-content;
+        width: fit-content;
 
-    &__article.left {
-        flex: 1;
+        & :link,
+        :visited {
+            color: color.$grey-font;
+            text-decoration: none;
+        }
+
+        .grey,
+        .grey>a {
+            color: color.$grey-info;
+            text-decoration: none;
+            margin-top: space.$spacing-6;
+        }
+
     }
 
-    &__location>h4,
-    &__opening>h4 {
-        margin: space.$spacing-60 0 space.$spacing-12;
+    &__some {
+
+        & p {
+            color: color.$grey-font;
+            padding: space.$spacing-12 0;
+        }
+
+        div {
+            @include mix.flex-start;
+            gap: space.$spacing-12;
+
+            a {
+                @include mix.flex-center;
+                padding: space.$spacing-10;
+                border-radius: 50%;
+                background-color: color.$some-bg;
+
+                svg {
+                    color: color.$white;
+                    width: 1.25rem;
+                    height: 1.25rem;
+                }
+            }
+        }
+
     }
 
-    &__article.right {
-        @include mix.flex-between;
-        align-items: start;
-        flex: 2;
-        gap: space.$spacing-35;
+    &__opening {
+        @include mix.flex-footer;
+        h4 {
+            white-space: nowrap;
+            margin: 0 space.$spacing-54 0 0;
+
+        }
+
     }
 
-    &__posts>h4,
-    &__tweets>h4 {
-        margin-top: 0;
+    &__links {
+        @include mix.flex-footer;
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            @include mix.flex-footer;
+
+
+
+            .FaPlay {
+                padding-right: space.$spacing-10;
+            }
+        }
+
+    }
+
+    &__contact {
+        @include mix.flex-footer;
     }
 }

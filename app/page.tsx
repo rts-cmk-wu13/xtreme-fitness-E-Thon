@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "./_components/header/hero/Hero";
 import Navigation from "./_components/header/navigation/Navigation";
 import Header from "./_components/header/Header";
+import Footer from "./_components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Home | Xtreme Fitness",
@@ -75,7 +76,7 @@ export default async function Home() {
         {/* <section className="section__posts">
         </section> */}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

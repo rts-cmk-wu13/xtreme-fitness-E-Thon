@@ -44,11 +44,22 @@
   flex-wrap: wrap;
 }
 
+// Flex footer
+@mixin flex-footer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
 // Responsive grid
-@mixin responsive-grid-two {
+@mixin responsive-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
-  gap: space.$spacing-24;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-template-rows: auto;
+  align-items: start;
+  justify-content: start;
 }
 @mixin grid-button {
   display: grid;

@@ -4,22 +4,5 @@
 
 .bottom {
     text-align: center;
-    @include mix.flex-between;
-    align-items: end;
-    margin-bottom: space.$spacing-12;
-    &__connected {
-        margin-bottom: space.$spacing-20;
-    }
-    &__links {
-        @include mix.flex-between;
-        gap: space.$spacing-24;
-    }
-    &__link {
-        padding: space.$spacing-12;
-        color: color.$white-text-color;
-        border: 2px solid color.$white-text-color;
-        width: space.$spacing-24;
-        height: space.$spacing-24;
-
-    }
+    padding: space.$spacing-29 0;
 }

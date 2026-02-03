@@ -1,10 +1,19 @@
-@use "../../style/variables/typography" as typo;
 @use "../../style/variables/spacing" as space;
-@use "../../style/mixins/mixins" as mix;
+@use "../../style/variables/color" as color;
+@use "../../style/variables/typography" as typo;
 @use "../../style/placeholders/base";
 
 .footer {
   @extend %base;
-  padding: space.$spacing-52 space.$pct-spacing-240;
-  @include mix.bg-gradient-image('/bg/footerbg.jpg');
+  color: color.$white;
+  background-color: color.$black;
+
+  :not(h4) {
+    font-size: typo.$p-12-size;
+  }
+
+  h4 {
+    color: color.$white;
+    font-size: typo.$p-30-size;
+  }
 }
