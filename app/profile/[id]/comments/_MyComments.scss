@@ -1,0 +1,40 @@
+@use "../../../style/variables/color" as color;
+@use "../../../style/variables/spacing" as space;
+@use "../../../style/mixins/mixins" as mix;
+
+.mycomments {
+    margin: space.$spacing-103 auto;
+    text-align: left;
+
+    &__list {
+        margin: space.$spacing-24 0;
+    }
+
+    &__item {
+        @include mix.flex-between;
+        margin: space.$spacing-24 0;
+        border-top: 1px solid color.$border;
+        padding: space.$spacing-12 0;
+
+        form {
+            align-self: flex-end;
+        }
+    }
+
+    &__author {
+        @include mix.flex-start;
+        align-items: center;
+        gap: space.$spacing-12;
+
+    }
+
+    &__name {
+        text-transform: capitalize;
+        color: color.$white;
+        margin: space.$spacing-12 0;
+    }
+
+    &__date {
+        color: color.$orange;
+    }
+}

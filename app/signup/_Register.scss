@@ -1,0 +1,7 @@
+@use "../style/variables/color" as color;
+
+.register {
+    &__section span {
+        color: color.$orange;
+    }
+}
