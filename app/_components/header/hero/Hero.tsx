@@ -7,12 +7,15 @@ import Button from "../../buttons/Button";
 
 interface TitleProps {
     title: string;
-    backgroundImage: string;
+    backgroundImage?: string;
+    backgroundColor?: string;
 }
 
-export default function Hero({ title, backgroundImage }: TitleProps) {
+export default function Hero({ title, backgroundImage, backgroundColor }: TitleProps) {
     const pathname = usePathname();
-    const style: React.CSSProperties | undefined = backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined;
+    const style: React.CSSProperties | undefined = 
+        backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : backgroundColor ? {backgroundColor}
+        : undefined;
 
     if (pathname === '/') {
         return (

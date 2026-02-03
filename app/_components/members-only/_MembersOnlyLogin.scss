@@ -1,0 +1,19 @@
+@use "../../style/variables/color" as color;
+@use "../../style/variables/spacing" as space;
+@use "../../style/placeholders/buttons";
+
+
+.members {
+    margin: space.$spacing-54 auto;
+
+    & span {
+        color: color.$orange;
+    }
+    &>p {
+        padding-bottom: space.$spacing-24;
+    }
+}
+
+.button {
+    @extend %btn;
+}

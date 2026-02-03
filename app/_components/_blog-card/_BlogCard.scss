@@ -1,0 +1,55 @@
+@use "../../style/variables/color" as color;
+@use "../../style/variables/spacing" as space;
+@use "../../style/mixins/mixins" as mix;
+@use "../../style/placeholders/buttons";
+
+.example {
+    background-color: color.$bg-color;
+
+    &__post {
+        @include mix.flex-between;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            .example__text {
+                margin: 0 0 0 clamp(1rem, 5vw, 4rem);
+            }
+        }
+    }
+
+    &__image {
+        flex: 1;
+        width: 50vw;
+        height: auto;
+    }
+
+    &__text {
+        @include mix.flex-col;
+        flex: 1;
+        height: fit-content;
+        padding: 0 space.$spacing-35;
+        margin: 0 clamp(1rem, 5vw, 4rem) 0 0;
+    }
+
+    &__h3 {
+        margin-bottom: space.$spacing-20;
+    }
+
+    &__author {
+        color: color.$pink-text-color;
+    }
+
+
+    &__content {
+        margin: space.$spacing-24 0;
+    }
+
+
+    .button {
+        justify-self: end;
+        @extend %btn;
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+}
