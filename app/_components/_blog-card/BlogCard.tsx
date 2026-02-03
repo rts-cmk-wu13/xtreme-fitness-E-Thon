@@ -2,51 +2,50 @@ import Image from "next/image"
 import "./_BlogCard.scss"
 import Link from "next/link";
 
-interface Posts {
+interface BlogCard {
     id: number;
     title: string;
-    author: string;
+    teaser: string;
     content: string;
-    assetId: number;
-    updatedAt: string;
+    author: string;
     createdAt: string;
-    image: string;
-}
-interface BlogExampleProps {
-    posts: Posts[];
-    assets: Record<number, { url: string, altText: string, width: number, height: number }>
-}
-console.log
-// function to make the post an excert:
-function excertContent(content: string, maxLength: number) {
-    if (content.length > maxLength) {
-        return content.substring(0, maxLength) + "...";
-    }
-    return content;
+    updatedAt: string;
+    asset: Asset;
 }
 
-export default async function BlogExample({ posts, assets }: BlogExampleProps) {
+interface Asset {
+    url: string;
+    altText: string;
+    width: number;
+    height: number;
+}
+
+
+export default function BlogCard({ posts }: { posts: BlogCard[] }) {
+
     return (
-        <section className="example">
+        <section className="blog">
             {posts.map((post) => {
-                const asset = assets[post.assetId];
                 return (
-                    <article className="example__post" key={post.id}>
-                        {asset && (
+                    <article className="blog__card" key={post.id}>
+                        <div className="blog__image">
                             <Image
-                                src={asset.url}
-                                alt={asset.altText}
-                                width={asset.width}
-                                height={asset.height}
+                                src={post.asset.url}
+                                alt={post.asset.altText}
+                                width={post.asset.width}
+                                height={post.asset.height}
                                 unoptimized
-                                className="example__image"
+                                className="image"
                             />
-                        )}
-                        <div className="example__text">
-                            <h3 className="example__h3">{post.title}</h3>
-                            <p className="example__author">BY: {post.author} / 3 comments / {new Date(post.updatedAt).toLocaleDateString()}</p>
-                            <p className="example__content">{excertContent(post.content, 400)}</p>
-                            <Link href="/blog/[id]" className="button">Read more</Link>
+                            <p className="blog__date">
+                                <span className="blog__month">{new Date(post.updatedAt).toLocaleDateString('en-US', { month: 'short' })}</span>
+                                {new Date(post.updatedAt).toLocaleDateString('en-US', { day: 'numeric' })}
+                                </p>
+                        </div>
+                        <div className="blog__text">
+                            <h3 className="blog__h3">{post.title}</h3>
+                            <p className="blog__teaser">{post.teaser}</p>
+                            <Link href={`/blog/${post.id}`} className="button">Read more</Link>
                         </div>
                     </article>
                 )

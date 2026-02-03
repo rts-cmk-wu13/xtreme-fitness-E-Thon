@@ -16,10 +16,12 @@
 
         &.home {
             border-left: solid 8px color.$white;
+            padding-left: space.$spacing-54;
         }
 
         &.subpage {
             margin: 0 auto;
+            text-align: center;
         }
     }
 

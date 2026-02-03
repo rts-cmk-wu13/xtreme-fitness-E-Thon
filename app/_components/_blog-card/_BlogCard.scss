@@ -1,55 +1,83 @@
 @use "../../style/variables/color" as color;
 @use "../../style/variables/spacing" as space;
+@use "../../style/variables/typography" as typo;
 @use "../../style/mixins/mixins" as mix;
 @use "../../style/placeholders/buttons";
 
-.example {
-    background-color: color.$bg-color;
+.blog {
+    max-width: 80%;
+    width: 100%;
+    margin: space.$spacing-54 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-rows: auto;
+    gap: space.$spacing-35;
+    
+    &__card {
+        display: contents;
+        width: 100%;
+        height: fit-content;
+        padding: space.$spacing-20;
+        text-align: center;
+    }
 
-    &__post {
-        @include mix.flex-between;
-
-        &:nth-child(even) {
-            flex-direction: row-reverse;
-
-            .example__text {
-                margin: 0 0 0 clamp(1rem, 5vw, 4rem);
+    &__image {
+        display: contents;
+        position: relative;
+        
+        .image {
+            height: auto;
+            width: 100%;
+            grid-row: 1;
+        }
+        p {
+            grid-row: 2;
+            background: color.$gradient-bg;
+            border-radius: 50%;
+            padding: space.$spacing-29;
+            width: 2rem;
+            height: 2rem;
+            justify-self: center;
+            margin-top: -5rem;
+            color: color.$white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            span {
+                display: block;
+                font-size: typo.$p-38-size;
             }
         }
     }
 
-    &__image {
-        flex: 1;
-        width: 50vw;
-        height: auto;
-    }
-
     &__text {
-        @include mix.flex-col;
-        flex: 1;
+        display: contents;
         height: fit-content;
-        padding: 0 space.$spacing-35;
-        margin: 0 clamp(1rem, 5vw, 4rem) 0 0;
+        padding: space.$spacing-54 space.$spacing-35;
     }
 
     &__h3 {
-        margin-bottom: space.$spacing-20;
+        font-size: typo.$p-25-size;
+        grid-row: 3;
     }
 
-    &__author {
-        color: color.$pink-text-color;
+    &__teaser {
+        grid-row: 4;
+        color: color.$grey-info;
+        max-width: 70%;
+        margin: 0 auto;
+        line-height: 166.667%;
     }
-
-
-    &__content {
-        margin: space.$spacing-24 0;
-    }
-
-
+    
     .button {
-        justify-self: end;
-        @extend %btn;
         white-space: nowrap;
-        text-transform: uppercase;
+        @include mix.flex-center;
+        color: color.$orange;
+        width: fit-content;
+        margin: 0 auto;
+        grid-row: 5;
+        font-weight: 400;
+        font-size: typo.$p-16-size;
     }
 }
