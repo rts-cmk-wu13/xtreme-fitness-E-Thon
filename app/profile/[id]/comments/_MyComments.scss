@@ -13,7 +13,7 @@
     &__item {
         @include mix.flex-between;
         margin: space.$spacing-24 0;
-        // border-top: 1px solid color.$border-color;
+        border-top: 1px solid color.$border;
         padding: space.$spacing-12 0;
 
         form {
@@ -30,11 +30,11 @@
 
     &__name {
         text-transform: capitalize;
-        // color: color.$white-text-color;
+        color: color.$white;
         margin: space.$spacing-12 0;
     }
 
     &__date {
-        // color: color.$pink-text-color;
+        color: color.$orange;
     }
 }
