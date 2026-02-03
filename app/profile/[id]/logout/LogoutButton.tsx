@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { logout } from "./logoutAction";
-import "./_LogoutButton.scss";
 import { FaPlay } from "react-icons/fa";
 
 export default function LogoutButton() {

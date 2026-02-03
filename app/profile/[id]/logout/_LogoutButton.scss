@@ -1,7 +1,0 @@
-@use "../../../style/placeholders/buttons";
-@use "../../../style/variables/spacing" as space;
-
-button.logout {
-    // margin: space.$spacing-60 auto;
-    @extend %btn;
-}
