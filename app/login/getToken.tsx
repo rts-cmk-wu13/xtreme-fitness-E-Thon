@@ -49,5 +49,5 @@ export async function getToken(prevState: any, formData: FormData) {
 
     // virker, men nulstiller formular ved fejlindtastning
 
-    redirect(`/profile/${data.user.id}`)
+    redirect(`/profile/${data.id}`)
 }

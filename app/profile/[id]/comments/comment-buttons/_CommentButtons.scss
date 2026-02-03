@@ -5,30 +5,27 @@
 
 .mycomments {
     &__buttons {
-        width: 25%;
-
+        max-width: 30%;
+        width: 100%;
         &>form {
             width: 100%;
             align-content: end;
             &>button {
-                width: 100%;
-                @extend %btn;
-                margin-top: space.$spacing-24;
+                width: 80%;
             }
         }
         
         &>dialog{
-            // background-color: color.$bg-color;
-            // color: color.$white-text-color;
             text-transform: uppercase;
             width: fit-content;
+
             &>form {
                 @include mix.flex-between;
                 flex-direction: row;
+                justify-items: center;
                 &>button {
+                    @include mix.flex-between;
                     width: 100%;
-                    @extend %btn;
-                    margin-top: space.$spacing-24;
                 }
             }
             

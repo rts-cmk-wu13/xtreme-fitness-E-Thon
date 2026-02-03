@@ -3,6 +3,7 @@
 import "../_CommentButtons.scss";
 import { useActionState, useRef } from "react";
 import { deleteComment } from "./deleteComment";
+import { FaPlay } from "react-icons/fa";
 
 interface DeleteCommentButtonProps {
     commentId: number;
@@ -25,15 +26,23 @@ export default function DeleteCommentButton({ commentId }: DeleteCommentButtonPr
     return (
         <>
             <form className="delete">
-                <button type="button" onClick={handleDialog}>Delete</button>
+                <button type="button" onClick={handleDialog} className="transparent button list">
+                    Delete
+                    <div className="orange">
+                        <FaPlay />
+                    </div>
+                </button>
             </form>
 
-            <dialog ref={dialogElement}>Do you want to delete your comment?
+            <dialog ref={dialogElement}>
+                <h2>Do you want to delete your comment?</h2>
                 <form action={formAction}>
-                    <button type="submit" disabled={isPending}>
+                    <button type="submit" disabled={isPending} className="orange button delete">
                         {isPending ? "Deleting..." : "Yes"}
                     </button>
-                    <button type="button" onClick={handleClose}>No</button>
+                    <button type="button" onClick={handleClose} className="transparent button delete">
+                        No
+                    </button>
                 </form>
                 {state?.message && (
                     <p className={state.success ? "success" : "error"}>
