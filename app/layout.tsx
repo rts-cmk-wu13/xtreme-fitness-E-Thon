@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import { ubuntu } from "./style/fonts/fonts";
+import { ubuntu, teko } from "./style/fonts/fonts";
 import "./globals.scss";
-import Header from "./_components/header/Header";
-import Navigation from "./_components/header/navigation/Navigation";
-import Hero from "./_components/header/hero/Hero";
-// import Footer from "./_components/footer/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +18,7 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en" className={ubuntu.variable}>
+    <html lang="en" className={`${ubuntu.variable} ${teko.variable}`}>
       <body
         className="antialiased">
         {children}

@@ -1,0 +1,50 @@
+@use "../../style/variables/color" as color;
+@use "../../style/variables/typography" as typo;
+@use "../../style/variables/spacing" as space;
+
+main {
+    padding: space.$spacing-103 0;
+}
+.blog {
+    max-width: 80%;
+    width: 100%;
+    margin: 0 auto;
+
+    &__post {
+        text-align: left;
+
+        &>h3 {
+            margin: space.$spacing-24 0 space.$spacing-12;
+            text-align: center;
+            max-width: 75%;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    &__image {
+        max-width: 47.625rem;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    &__content {
+        margin: space.$spacing-24 0;
+        color: color.$grey-info;
+        font-size: typo.$p-25-size;
+        font-weight: 300;
+        line-height: 136%;
+
+    }
+
+    &__author p {
+        font-style: italic;
+        color: color.$grey-info;
+        font-size: typo.$p-18-size;
+        font-weight: 400;
+        line-height: 136%;
+    }
+
+}

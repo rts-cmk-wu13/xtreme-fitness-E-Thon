@@ -1,0 +1,20 @@
+@use "../../../../style/placeholders/buttons";
+@use "../../../../style/placeholders/components";
+@use "../../../../style/variables/spacing" as space;
+@use "../../../../style/mixins/mixins" as mix;
+
+h3 {
+    margin: space.$spacing-54 0 0;
+}
+form {
+    margin: space.$spacing-24 auto;
+    width: 100%;
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+}

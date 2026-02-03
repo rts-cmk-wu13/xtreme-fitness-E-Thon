@@ -4,6 +4,7 @@ import "../_CommentButtons.scss";
 import "../../../../../style/_Forms.scss";
 import { useActionState, useRef } from "react";
 import { editComment } from "./editComment";
+import { FaPlay } from "react-icons/fa";
 
 interface EditCommentButtonProps {
     commentId: number;
@@ -28,7 +29,12 @@ export default function EditCommentButton({ commentId }: EditCommentButtonProps)
     return (
         <>
             <form className="edit">
-                <button type="button" onClick={handleDialog}>Edit</button>
+                <button type="button" onClick={handleDialog} className="transparent button list">
+                    Edit
+                    <div className="orange">
+                        <FaPlay />
+                    </div>
+                </button>
                 {state?.message && (
                     <p className={state.success ? "success" : "error"}>
                         {state.message}
@@ -37,8 +43,7 @@ export default function EditCommentButton({ commentId }: EditCommentButtonProps)
             </form>
 
             <dialog ref={dialogElement}>
-                <p> Edit your comment
-                </p>
+                <h2>Edit your comment</h2>
                 <form action={formAction}>
                     <input type="text" name="name" placeholder="Your Name" required />
                     <input type="email" name="email" placeholder="Email" required />
@@ -46,8 +51,20 @@ export default function EditCommentButton({ commentId }: EditCommentButtonProps)
                     <button type="submit" disabled={isPending}>
                         {isPending ? "Submitting..." : "Submit"}
                     </button>
+                    <button type="submit" disabled={isPending} className="orange button">
+                        {isPending ? "Submitting..." : "Submit"}
+                        <div className="white">
+                            <FaPlay />
+                        </div>
+                    </button>
 
-                    <button type="button" onClick={handleClose}>Close</button>
+                    <button type="button" onClick={handleClose} className="orange button">
+                        Close
+                        <div className="white">
+                            <FaPlay />
+                        </div>
+                    </button>
+
                     {state && "message" in state && state.message && (
                         <p>{state.message}</p>
                     )}
@@ -66,4 +83,3 @@ export default function EditCommentButton({ commentId }: EditCommentButtonProps)
 
     );
 }
-
