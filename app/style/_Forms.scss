@@ -1,0 +1,55 @@
+@use "./placeholders/buttons";
+@use "./placeholders/components";
+@use "./variables/spacing" as space;
+
+form {
+    @extend %form;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    @extend %input;
+
+}
+
+button {
+    @extend %btn;
+    margin-bottom: space.$spacing-24;
+
+    &.button {
+        padding: space.$spacing-10 space.$spacing-10 space.$spacing-10 space.$spacing-30;
+
+    }
+
+
+    &.transparent {
+        @extend %transparent-btn;
+    }
+
+    &.orange {
+        @extend %orange-btn;
+    }
+
+    &>.orange {
+        @extend %btn-play;
+        @extend %orange-play;
+        padding: space.$spacing-6 space.$spacing-24;
+        svg {
+            width: 12.594px;
+            height: 15.417px;
+        }
+    }
+
+    &>.white {
+        @extend %btn-play;
+        @extend %white-play;
+        padding: space.$spacing-6 space.$spacing-24;
+        svg {
+            width: 12.594px;
+            height: 15.417px;
+        }
+    }
+}

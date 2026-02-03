@@ -1,0 +1,10 @@
+@use "../../style/variables/spacing" as space;
+@use "../../style/mixins/mixins" as mix;
+
+.title {
+    @include mix.flex-center;
+    flex-direction: column;
+    gap: space.$spacing-30;
+    margin-bottom: space.$spacing-24;
+    text-align: center;
+}

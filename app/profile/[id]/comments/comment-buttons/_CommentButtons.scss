@@ -1,0 +1,43 @@
+@use "../../../../style/placeholders/buttons";
+@use "../../../../style/mixins/mixins" as mix;
+@use "../../../../style/variables/color" as color;
+@use "../../../../style/variables/spacing" as space;
+
+.mycomments {
+    &__buttons {
+        width: 25%;
+
+        &>form {
+            width: 100%;
+            align-content: end;
+            &>button {
+                width: 100%;
+                @extend %btn;
+                margin-top: space.$spacing-24;
+            }
+        }
+        
+        &>dialog{
+            // background-color: color.$bg-color;
+            // color: color.$white-text-color;
+            text-transform: uppercase;
+            width: fit-content;
+            &>form {
+                @include mix.flex-between;
+                flex-direction: row;
+                &>button {
+                    width: 100%;
+                    @extend %btn;
+                    margin-top: space.$spacing-24;
+                }
+            }
+            
+        }
+        
+    }
+}
+
+
+dialog::backdrop {
+    background-color: rgb(0 0 0 / 0.6);
+}

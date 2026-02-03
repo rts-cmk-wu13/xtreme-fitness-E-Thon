@@ -17,6 +17,7 @@
   width: fit-content;
   color: color.$white;
   white-space: nowrap;
+  align-self: center;
 
   &:hover {
     opacity: 0.5;
@@ -33,7 +34,8 @@
 }
 
 %transparent-btn {
-  border: solid 4px color.$border;
+  border: solid 2px color.$border;
+  color: color.$grey-info;
 }
 
 %orange-btn {

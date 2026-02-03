@@ -1,0 +1,18 @@
+@use "../../style/variables/color" as color;
+@use "../../style/variables/typography" as typo;
+@use "../../style/variables/spacing" as space;
+@use "../../style/placeholders/components";
+@use "../../style/mixins/mixins" as mix;
+
+.profile {
+    text-align: center;
+    @include mix.flex-center;
+    flex-direction: column;
+    padding: space.$spacing-103 0;
+    &__membership {
+        padding: space.$spacing-40 0;
+        h4 {
+            font-size: typo.$p-38-size;
+        }
+    }
+}

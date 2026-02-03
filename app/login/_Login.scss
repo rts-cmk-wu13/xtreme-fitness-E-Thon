@@ -1,0 +1,14 @@
+@use "../style/variables/color" as color;
+@use "../style/variables/spacing" as space;
+@use "../style/placeholders/components";
+@use "../style/mixins/mixins" as mix;
+
+.login {
+    @include mix.flex-center;
+    flex-direction: column;
+    padding: space.$spacing-103 0;
+}
+
+.link {
+    @extend %link;
+}

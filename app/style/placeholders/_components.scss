@@ -1,34 +1,47 @@
 @use "../variables/spacing" as space;
 @use "../variables/typography" as typo;
 @use "../variables/color" as color;
+@use "../mixins/mixins" as mix;
+
+// Form placeholder
+%form {
+  @include mix.flex-col;
+  gap: space.$spacing-30;
+  width: 30%;
+  padding: space.$spacing-10 0;
+  margin: space.$spacing-29 auto;
+}
 
 // Input placeholder
 %input {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  // padding: space.$spacing-35 space.$spacing-24;
-  border: 1px solid color.$border-color;
+  padding: space.$spacing-18 space.$spacing-24;
+  border: 1px solid color.$grey-info;
   background: color.$bg;
-  color: color.$black;
-  // font-size: typo.$p-18-size;
+  color: color.$grey-info;
+  font-size: typo.$input-size;
+  border-radius: 50px;
 
   &:focus {
     outline: none;
+
     &::placeholder {
       color: transparent;
     }
   }
 
   &::placeholder {
-    color: color.$black;
+    color: color.$grey-info;
   }
 }
 
 // Link placeholder
 %link {
-  color: color.$pink-text-color;
+  color: color.$orange;
   text-decoration: none;
+  font-size: typo.$p-16-size;
 
   &:hover {
     opacity: 0.8;
