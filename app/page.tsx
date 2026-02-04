@@ -6,6 +6,7 @@ import Footer from "./_components/footer/Footer";
 import Title from "./_components/title/Title";
 import ContactForm from "./contact/contact-formula/ContactForm";
 import BlogComponent from "./_components/_blog-card/BlogComponent";
+import AbonnementComponent from "./_components/abonnements/AbonnementComponent";
 
 export const metadata: Metadata = {
   title: "Home | Xtreme Fitness",
@@ -49,8 +50,7 @@ export default async function Home() {
         </section> */}
         {/* <section className="section__testimonials">
         </section> */}
-        {/* <section className="section__abonnements">
-        </section> */}
+        <AbonnementComponent />
         {/* <section className="section__coaches">
         </section> */}
         <ContactForm

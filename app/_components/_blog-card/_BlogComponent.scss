@@ -5,13 +5,7 @@
 @use "../../style/placeholders/buttons";
 
 .blog {
-    max-width: 80%;
-    width: 100%;
-    margin: space.$spacing-54 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    grid-template-rows: auto;
-    gap: space.$spacing-35;
+    @include mix.card-grid;
 
     &__card {
         display: contents;

@@ -61,6 +61,18 @@
   align-items: start;
   justify-content: start;
 }
+
+// card grid
+@mixin card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-rows: auto;
+  gap: space.$spacing-35;
+  max-width: 100%;
+  width: 80%;
+  margin: space.$spacing-54 auto;
+}
+
 // Grid two columns
 @mixin grid-two-columns {
   display: grid;
@@ -70,6 +82,7 @@
   align-items: start;
   justify-content: start;
 }
+
 // Grid button
 @mixin grid-button {
   display: grid;

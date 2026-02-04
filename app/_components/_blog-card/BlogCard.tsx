@@ -1,5 +1,5 @@
 import Image from "next/image"
-import "./_BlogCard.scss"
+import "./_BlogComponent.scss"
 import Link from "next/link";
 
 interface BlogCard {

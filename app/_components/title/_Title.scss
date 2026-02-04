@@ -4,7 +4,6 @@
 .title {
     @include mix.flex-center;
     flex-direction: column;
-    gap: space.$spacing-30;
-    margin-bottom: space.$spacing-24;
+    margin: space.$spacing-24 auto;
     text-align: center;
 }

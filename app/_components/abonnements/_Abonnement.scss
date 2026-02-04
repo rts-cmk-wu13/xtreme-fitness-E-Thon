@@ -1,0 +1,94 @@
+@use "../../style/variables/color" as color;
+@use "../../style/variables/spacing" as space;
+@use "../../style/variables/typography" as typo;
+@use "../../style/mixins/mixins" as mix;
+@use "../../style/placeholders/buttons";
+
+.abonnement {
+    @include mix.card-grid;
+
+    &__card {
+        display: contents;
+        width: 100%;
+        height: fit-content;
+        padding: space.$spacing-20;
+        text-align: center;
+    }
+
+    &__image {
+        display: contents;
+        position: relative;
+
+        .image {
+            height: auto;
+            width: 100%;
+            grid-row: 1;
+        }
+
+        p {
+            grid-row: 2;
+            background: color.$gradient-bg;
+            border-radius: 50%;
+            padding: space.$spacing-29;
+            width: 2rem;
+            height: 2rem;
+            justify-self: center;
+            margin-top: -5rem;
+            color: color.$white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: typo.$p-21-size;
+
+            span {
+                display: block;
+                font-size: typo.$p-30-size;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    &__text {
+        display: contents;
+        height: fit-content;
+        padding: space.$spacing-54 space.$spacing-35;
+    }
+
+    &__h3 {
+        font-size: typo.$p-25-size;
+        grid-row: 3;
+    }
+
+    &__advantages {
+        grid-row: 4;
+        color: color.$grey-info;
+        max-width: 100%;
+        margin: 0 auto;
+        list-style: none;
+        text-align: left;
+        width: 100%;
+
+        li {
+            line-height: 291.667%;
+
+            svg {
+                margin-right: space.$spacing-20;
+                color: color.$orange;
+            }
+        }
+    }
+
+    .button {
+        margin: 0 auto;
+        grid-row: 5;
+        font-weight: 400;
+        font-size: typo.$p-16-size;
+        padding: space.$spacing-6 space.$spacing-6 space.$spacing-6 space.$spacing-18;
+    }
+}
+
+// COMPONENT
+.section__abonnements {
+    margin: space.$spacing-103 auto;
+}
