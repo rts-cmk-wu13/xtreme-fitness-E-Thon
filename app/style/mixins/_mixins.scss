@@ -61,6 +61,16 @@
   align-items: start;
   justify-content: start;
 }
+// Grid two columns
+@mixin grid-two-columns {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  align-items: start;
+  justify-content: start;
+}
+// Grid button
 @mixin grid-button {
   display: grid;
   grid-template-columns: repeat(2, auto);

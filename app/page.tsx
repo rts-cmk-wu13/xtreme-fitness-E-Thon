@@ -5,6 +5,7 @@ import Header from "./_components/header/Header";
 import Footer from "./_components/footer/Footer";
 import BlogCard from "./_components/_blog-card/BlogCard";
 import Title from "./_components/title/Title";
+import ContactForm from "./contact/contact-formula/ContactForm";
 
 export const metadata: Metadata = {
   title: "Home | Xtreme Fitness",
@@ -12,12 +13,12 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   // fetch posts blog card
-  const postRes = await fetch(`http://localhost:4000/posts`, {
+  const postRes = await fetch('http://localhost:4000/posts', {
     next: { revalidate: 60 }
   });
   if (!postRes.ok) {
     throw new Error(`Failed to fetch posts: ${postRes.status}`);
-}
+  }
   const postData = await postRes.json();
   const posts = postData.data;
 
@@ -62,8 +63,11 @@ export default async function Home() {
         </section> */}
         {/* <section className="section__coaches">
         </section> */}
-        {/* <section className="section__contact">
-        </section> */}
+        <section className="section__contact">
+          <ContactForm
+            className=""
+          />
+        </section>
         <section className="section__posts">
           <Title
             h2="Our news"

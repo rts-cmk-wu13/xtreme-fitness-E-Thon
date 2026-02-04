@@ -1,0 +1,25 @@
+@use "../style/variables/spacing" as space;
+@use "../style/variables/color" as color;
+
+.contact {
+    margin: space.$spacing-103 auto;
+
+    h3 {
+        width: 60%;
+    }
+}
+
+.main {
+    & .contactpage {
+        width: 60%;
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="password"],
+        textarea,
+        select {
+            border: 1px solid color.$grey-info;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@use '../../style/mixins/mixins' as mix;
+
+.contactform {
+    @include mix.grid-two-columns;
+    width: 20%;
+    textarea {
+        grid-column: 1 / -1;
+    }
+    button {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+}
