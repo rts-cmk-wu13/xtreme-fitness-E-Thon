@@ -4,22 +4,34 @@
 .contact {
     margin: space.$spacing-103 auto;
 
-    h3 {
-        width: 60%;
-    }
-}
+    .wrapper.contactpage {
+        width: 100%;
+        background-image: none;
 
-.main {
-    & .contactpage {
-        width: 60%;
+        .contact-us.contactpage {
+            max-width: 60%;
+            margin: 0 auto;
 
-        input[type="text"],
-        input[type="tel"],
-        input[type="email"],
-        input[type="password"],
-        textarea,
-        select {
-            border: 1px solid color.$grey-info;
+            .title {
+                display: block;
+                text-align: center;
+                color: color.$black;
+            }
+
+            .contactform {
+                input[type="text"],
+                input[type="tel"],
+                input[type="email"],
+                input[type="password"],
+                textarea,
+                select {
+                    border: 1px solid color.$grey-info;
+                }
+
+                button {
+                    color: color.$grey-info;
+                }
+            }
         }
     }
 }

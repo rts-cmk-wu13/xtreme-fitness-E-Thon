@@ -11,4 +11,7 @@ body {
 // SECTIONS
 .section {
   margin: 0 auto;
+  &__posts {
+    margin: space.$spacing-103 auto;
+  }
 }

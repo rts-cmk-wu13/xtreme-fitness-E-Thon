@@ -29,13 +29,13 @@ export async function submitMessage(prevState: FormState, formData: FormData): P
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(validatedData)
+        body: JSON.stringify(validatedData.data)
     });
 
     if (!messageRes.ok) {
         return {
             message: "Message failed to send",
-            values: validatedData
+            values: validatedData.data
         };
     }
 
