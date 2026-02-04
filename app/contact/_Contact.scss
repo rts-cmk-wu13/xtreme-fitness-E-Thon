@@ -1,0 +1,37 @@
+@use "../style/variables/spacing" as space;
+@use "../style/variables/color" as color;
+
+.section__contact {
+    margin: space.$spacing-103 auto;
+
+    .wrapper.contactpage {
+        width: 100%;
+        background-image: none;
+
+        .contact-us.contactpage {
+            max-width: 60%;
+            margin: 0 auto;
+
+            .title {
+                display: block;
+                text-align: center;
+                color: color.$black;
+            }
+
+            .contactform {
+                input[type="text"],
+                input[type="tel"],
+                input[type="email"],
+                input[type="password"],
+                textarea,
+                select {
+                    border: 1px solid color.$grey-info;
+                }
+
+                button {
+                    color: color.$grey-info;
+                }
+            }
+        }
+    }
+}

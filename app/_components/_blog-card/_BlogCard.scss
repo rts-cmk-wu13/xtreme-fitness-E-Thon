@@ -12,7 +12,7 @@
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     grid-template-rows: auto;
     gap: space.$spacing-35;
-    
+
     &__card {
         display: contents;
         width: 100%;
@@ -24,12 +24,13 @@
     &__image {
         display: contents;
         position: relative;
-        
+
         .image {
             height: auto;
             width: 100%;
             grid-row: 1;
         }
+
         p {
             grid-row: 2;
             background: color.$gradient-bg;
@@ -44,6 +45,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
             span {
                 display: block;
                 font-size: typo.$p-38-size;
@@ -69,7 +71,7 @@
         margin: 0 auto;
         line-height: 166.667%;
     }
-    
+
     .button {
         white-space: nowrap;
         @include mix.flex-center;
@@ -80,4 +82,9 @@
         font-weight: 400;
         font-size: typo.$p-16-size;
     }
+}
+
+// COMPONENT
+.section__posts {
+    margin: space.$spacing-103 auto;
 }

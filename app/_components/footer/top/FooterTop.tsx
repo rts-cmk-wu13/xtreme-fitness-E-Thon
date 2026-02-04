@@ -69,7 +69,7 @@ export default function FooterTop() {
                         <li className="top__link"><FaPlay className="FaPlay" /><Link href="/about">About</Link></li>
                         <li className="top__link"><FaPlay className="FaPlay" /><Link href="/services">Services</Link></li>
                         <li className="top__link"><FaPlay className="FaPlay" /><Link href="/coaches">Coaches</Link></li>
-                        <li className="top__link"><FaPlay className="FaPlay" /><Link href="/prices">Prices</Link></li>
+                        <li className="top__link"><FaPlay className="FaPlay" /><Link href="/subscriptions">Subscriptions</Link></li>
                         <li className="top__link"><FaPlay className="FaPlay" /><Link href="/contact">Contact</Link></li>
                     </ul>
                 </nav>

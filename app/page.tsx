@@ -3,24 +3,15 @@ import Hero from "./_components/header/hero/Hero";
 import Navigation from "./_components/header/navigation/Navigation";
 import Header from "./_components/header/Header";
 import Footer from "./_components/footer/Footer";
-import BlogCard from "./_components/_blog-card/BlogCard";
 import Title from "./_components/title/Title";
+import ContactForm from "./contact/contact-formula/ContactForm";
+import BlogComponent from "./_components/_blog-card/BlogComponent";
 
 export const metadata: Metadata = {
   title: "Home | Xtreme Fitness",
 };
 
 export default async function Home() {
-  // fetch posts blog card
-  const postRes = await fetch(`http://localhost:4000/posts`, {
-    next: { revalidate: 60 }
-  });
-  if (!postRes.ok) {
-    throw new Error(`Failed to fetch posts: ${postRes.status}`);
-}
-  const postData = await postRes.json();
-  const posts = postData.data;
-
   // // Events
   // const eventRes = await fetch("http://localhost:4000/events", {
   //   next: { revalidate: 60 }
@@ -62,15 +53,10 @@ export default async function Home() {
         </section> */}
         {/* <section className="section__coaches">
         </section> */}
-        {/* <section className="section__contact">
-        </section> */}
-        <section className="section__posts">
-          <Title
-            h2="Our news"
-            h3="Latest posts"
-          />
-          <BlogCard posts={posts} />
-        </section>
+        <ContactForm
+          className=""
+        />
+        <BlogComponent />
       </main>
       <Footer />
     </>

@@ -52,8 +52,6 @@ export default async function PostPage({ params }: PageProps) {
     const post: Post = postData.data;
     const image: Asset = post.asset;
 
-    // console.log("post data: ", post);
-
     return (
         <>
             <Header>

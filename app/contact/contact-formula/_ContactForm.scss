@@ -1,0 +1,45 @@
+@use '../../style/mixins/mixins' as mix;
+@use '../../style/variables/color' as color;
+@use '../../style/variables/spacing' as space;
+.wrapper {
+    width: 100%;
+    background-image: url(/images/contact_us_background.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    .contact-us {
+        max-width: 35%;
+        width: 100%;
+        margin: space.$spacing-103 space.$pct-spacing-122 space.$spacing-103 auto;
+
+        .title {
+            display: inline-block;
+            text-align: left;
+            color: color.$white;
+        }
+
+        .contactform {
+            @include mix.grid-two-columns;
+
+            input[type="text"],
+            input[type="tel"],
+            input[type="email"],
+            input[type="password"],
+            textarea,
+            select {
+                border: none;
+            }
+
+            textarea {
+                grid-column: 1 / -1;
+            }
+
+            button {
+                grid-column: 1 / -1;
+                justify-self: center;
+                color: color.$white;
+            }
+        }
+    }
+}
