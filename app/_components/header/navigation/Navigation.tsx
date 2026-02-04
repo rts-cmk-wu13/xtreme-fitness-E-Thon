@@ -24,7 +24,7 @@ export default async function Navigation() {
                 <li><Link href="/" className="navigation__link">Home</Link></li>
                 <li><Link href="/services" className="navigation__link">Services</Link></li>
                 <li><Link href="/coaches" className="navigation__link">Coaches</Link></li>
-                <li><Link href="/prices" className="navigation__link">Prices</Link></li>
+                <li><Link href="/subscriptions" className="navigation__link">Subscriptions</Link></li>
                 <li><Link href="/about" className="navigation__link">About Us</Link></li>
                 <li><Link href="/contact" className="navigation__link">Contact</Link></li>
                 <li>
