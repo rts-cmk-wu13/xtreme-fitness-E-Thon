@@ -17,26 +17,25 @@ export const metadata: Metadata = {
 export default async function Profile({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
     const cookieStore = await cookies();
-    const token = cookieStore.get("token");
+    const token = cookieStore.get("token")?.value;
 
     if (!token) {
         return <p>Unauthorized - Please login</p>
     }
-    const response = await fetch(`http://localhost:4000/users/me`, {
+    const userRes = await fetch(`http://localhost:4000/users/me`, {
         method: "GET",
         headers: {
-            Authorization: `Bearer ${token.value}`
+            Authorization: `Bearer ${token}`
         }
     })
 
-    if (!response.ok) {
-        return <p>Failed to load profile</p>
+    if (!userRes.ok) {
+        throw new Error(`Failed to load profile: ${userRes.status}`);
     }
 
-    const profileData = await response.json();
+    const profileData = await userRes.json();
     const user = profileData.data;
-    console.log("user:", user)
-    { console.log("Image URL:", user.membership.asset.url) }
+
     return (
         <>
             <Header>

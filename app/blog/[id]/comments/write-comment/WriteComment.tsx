@@ -15,7 +15,6 @@ interface WriteCommentsProps {
 export default function WriteComment({ postId, isLoggedIn }: WriteCommentsProps) {
     const [state, formAction, pending] = useActionState(submitComment.bind(null, postId), null);
 
-
     if (!isLoggedIn) {
         return (
             <section className="usercomment">
@@ -30,16 +29,16 @@ export default function WriteComment({ postId, isLoggedIn }: WriteCommentsProps)
             <h3>leave a comment</h3>
             <form action={formAction} noValidate className="usercomments__form">
                 <input type="text" name="name" placeholder="Your Name" required />
-                {state && "name" in state && state.name && (
-                    <p>{state.name.errors}</p>
+                {state && "name" in state && state.errors?.name && (
+                    <p>{state.errors.name.errors}</p>
                 )}
                 <input type="email" name="email" placeholder="Email" required />
-                {state && "email" in state && state.email && (
-                    <p>{state.email.errors}</p>
+                {state && "email" in state && state.errors?.email && (
+                    <p>{state.errors.email.errors}</p>
                 )}
                 <textarea name="content" placeholder="Your Comment" rows={10} required />
-                {state && "content" in state && state.content && (
-                    <p>{state.content.errors}</p>
+                {state && "content" in state && state.errors?.content && (
+                    <p>{state.errors.content.errors}</p>
                 )}
                 <button type="submit" disabled={pending} className="transparent button">
                     Submit

@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 
 export default async function Navigation() {
     const cookieStore = await cookies();
-    const token = cookieStore.get("token");
+    const token = cookieStore.get("token")?.value;
     const userId = cookieStore.get("user-id");
 
     return (

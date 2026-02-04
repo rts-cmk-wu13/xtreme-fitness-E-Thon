@@ -8,24 +8,27 @@ export async function deleteComment(commentId: number) {
     const token = cookieStore.get("token")?.value;
 
     if (!token) {
-        return { message: "Login to see and delete your comments", success: false };
+        return {
+            message: "Login to see and delete your comments",
+            success: false
+        };
     }
 
-    const res = await fetch(`http://localhost:4000/comments/${commentId}`, {
+    const commentRes = await fetch(`http://localhost:4000/comments/${commentId}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`
         }
     });
 
-    if (!res.ok) {
+    if (!commentRes.ok) {
         return {
             message: "An error occured while trying to delete the comment. Please try again later.",
             success: false
         }
     };
 
-    const data = await res.json();
+    const data = await commentRes.json();
 
     revalidateTag("comments", "max");
 
@@ -33,5 +36,5 @@ export async function deleteComment(commentId: number) {
         message: data.message,
         success: true
     }
-    
+
 }

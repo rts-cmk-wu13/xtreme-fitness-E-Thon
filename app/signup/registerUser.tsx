@@ -3,6 +3,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod/v4";
+import type { FormState } from "../types/form";
 
 const signupSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters"),
@@ -15,51 +16,35 @@ const signupSchema = z.object({
     path: ["confirmPassword"],
 })
 
-export async function registerUser(prevState: any, formData: FormData) {
+export async function registerUser(prevState: FormState, formData: FormData): Promise<FormState> {
     const signupData = Object.fromEntries(formData)
-
     const validatedData = signupSchema.safeParse(signupData)
+
     if (!validatedData.success) {
         const errors = z.treeifyError(validatedData.error)
         return {
-            ...errors.properties,
-            values: {
-                name: signupData.name,
-                email: signupData.email,
-                membershipId: signupData.membershipId,
-            }
+            errors: errors.properties,
+            values: signupData
         }
     }
 
-    const response = await fetch("http://localhost:4000/auth/register", {
-        "method": "POST",
-        "headers": {
+    const registerRes = await fetch(`http://localhost:4000/auth/register`, {
+        method: "POST",
+        headers: {
             "Content-Type": "application/json"
         },
-        "body": JSON.stringify({
-            name: validatedData.data.name,
-            email: validatedData.data.email,
-            membershipId: parseInt(validatedData.data.membershipId),
-            password: validatedData.data.password
-        })
+        body: JSON.stringify(validatedData.data)
     })
 
-    if (!response.ok) {
-        const errorData = await response.text()
-        console.error("API Error:", response.status, errorData)
-        return (
-            {
-                message: "Signup failed",
-                values: {
-                    name: validatedData.data.name,
-                    email: validatedData.data.email,
-                    membershipId: validatedData.data.membershipId,
-                }
-            }
-        )
+    if (!registerRes.ok) {
+        return {
+            message: "Signup failed",
+            values: validatedData
+        }
+
     }
 
-    const data = await response.json()
+    const data = await registerRes.json()
     const cookieStore = await cookies();
     cookieStore.set("token", data.accessToken);
     cookieStore.set("user-id", data.id);

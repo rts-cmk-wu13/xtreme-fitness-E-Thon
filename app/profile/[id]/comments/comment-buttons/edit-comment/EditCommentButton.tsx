@@ -68,14 +68,14 @@ export default function EditCommentButton({ commentId }: EditCommentButtonProps)
                     {state && "message" in state && state.message && (
                         <p>{state.message}</p>
                     )}
-                    {state && "name" in state && state.name && (
-                        <p>{state.name.errors}</p>
+                    {state && "name" in state && state.errors?.name && (
+                        <p>{state.errors.name.errors}</p>
                     )}
-                    {state && "email" in state && state.email && (
-                        <p>{state.email.errors}</p>
+                    {state && "email" in state && state.errors?.email && (
+                        <p>{state.errors.email.errors}</p>
                     )}
-                    {state && "content" in state && state.content && (
-                        <p>{state.content.errors}</p>
+                    {state && "content" in state && state.errors?.content && (
+                        <p>{state.errors.content.errors}</p>
                     )}
                 </form>
             </dialog>

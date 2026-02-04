@@ -19,7 +19,7 @@ interface CommentsProps {
 export default async function Comments({ postId }: CommentsProps) {
     let comments: Comment[] = [];
 
-    const commentsRes = await fetch("http://localhost:4000/comments", {
+    const commentsRes = await fetch(`http://localhost:4000/comments`, {
         next: { tags: [`comments-${postId}`] }
     });
 

@@ -17,7 +17,6 @@ export default function DeleteCommentButton({ commentId }: DeleteCommentButtonPr
     const dialogElement = useRef<HTMLDialogElement>(null)
 
     function handleDialog() {
-        console.log("show dialog: ", dialogElement.current)
         dialogElement.current?.showModal();
     }
     const handleClose = () => dialogElement.current?.close();

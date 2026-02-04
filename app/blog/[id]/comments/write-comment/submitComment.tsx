@@ -3,6 +3,7 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import z from "zod/v4";
+import type { FormState } from "../../../../types/form";
 
 const commentSchema = z.object({
     name: z.string().min(1, "Name is required"),
@@ -10,35 +11,26 @@ const commentSchema = z.object({
     content: z.string().min(1, "Comment is required").max(500),
 })
 
-export async function submitComment(postId: string, prevState: any, formData: FormData) {
+export async function submitComment(postId: string, prevState: FormState, formData: FormData): Promise<FormState> {
     const commentData = Object.fromEntries(formData);
     const validatedData = commentSchema.safeParse(commentData);
-    console.log("Comment data received:", commentData);
 
     if (!validatedData.success) {
-        console.log("Validation errors:", validatedData.error);
         const errors = z.treeifyError(validatedData.error);
         return {
-            ...errors.properties,
-            values: {
-                name: commentData.name,
-                email: commentData.email,
-            }
-        };
+            errors: errors.properties,
+            values: commentData
+        }
     }
 
     const cookieStore = await cookies();
     const token = cookieStore.get("token")?.value;
 
     if (!token) {
-        console.log("No token found - user not logged in");
         return { message: "You must be logged in to comment" };
     }
 
-    console.log("Sending comment to:", `http://localhost:4000/posts/${postId}/comments`);
-    console.log("Token exists:", !!token);
-
-    const response = await fetch(`http://localhost:4000/posts/${postId}/comments`, {
+    const commentsRes = await fetch(`http://localhost:4000/posts/${postId}/comments`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -47,12 +39,7 @@ export async function submitComment(postId: string, prevState: any, formData: Fo
         body: JSON.stringify(validatedData.data)
     });
 
-    console.log("Response status:", response.status);
-
-
-    if (!response.ok) {
-        const errorText = await response.text();
-        console.log("Error response:", response.status, errorText);
+    if (!commentsRes.ok) {
         return {
             message: "Comment failed to send",
             success: false

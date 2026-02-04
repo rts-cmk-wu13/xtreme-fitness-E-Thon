@@ -12,9 +12,12 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   // fetch posts blog card
-  const postRes = await fetch("http://localhost:4000/posts", {
+  const postRes = await fetch(`http://localhost:4000/posts`, {
     next: { revalidate: 60 }
   });
+  if (!postRes.ok) {
+    throw new Error(`Failed to fetch posts: ${postRes.status}`);
+}
   const postData = await postRes.json();
   const posts = postData.data;
 

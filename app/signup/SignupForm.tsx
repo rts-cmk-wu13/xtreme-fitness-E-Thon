@@ -11,12 +11,12 @@ export default function SignupForm() {
     return (
         <form action={formAction} noValidate>
             <input type="text" name="name" placeholder="Your Name" defaultValue={state?.values?.name as string || ""} required />
-            {state && 'name' in state && state.name ?
-                <p>{state.name.errors}</p> : ""
+            {state && 'name' in state && state.errors?.name ?
+                <p>{state.errors.name.errors}</p> : ""
             }
             <input type="email" name="email" placeholder="Email" defaultValue={state?.values?.email as string || ""} required />
-            {state && 'email' in state && state.email ?
-                <p>{state.email.errors}</p> : ""
+            {state && 'email' in state && state.errors?.email ?
+                <p>{state.errors.email.errors}</p> : ""
             }
             <select name="membershipId" required>
                 <option value="" disabled>Choose membership</option>
@@ -24,16 +24,16 @@ export default function SignupForm() {
                 <option value="2">Standard gym</option>
                 <option value="3">Premium gym</option>
             </select>
-            {state && 'membershipId' in state && state.membershipId ?
-                <p>{state.membershipId.errors}</p> : ""
+            {state && 'membershipId' in state && state.errors?.membershipId ?
+                <p>{state.errors.membershipId.errors}</p> : ""
             }
             <input type="password" name="password" placeholder="Your Password" required />
-            {state && 'password' in state && state.password ?
-                <p>{state.password.errors}</p> : ""
+            {state && 'password' in state && state.errors?.password ?
+                <p>{state.errors.password.errors}</p> : ""
             }
             <input type="password" name="confirmPassword" placeholder="Repeat Your Password" required />
-            {state && 'confirmPassword' in state && state.confirmPassword ?
-                <p>{state.confirmPassword.errors}</p> : ""
+            {state && 'confirmPassword' in state && state.errors?.confirmPassword ?
+                <p>{state.errors.confirmPassword.errors}</p> : ""
             }
             <button type="submit" disabled={pending} className="transparent button">
                 Register user
