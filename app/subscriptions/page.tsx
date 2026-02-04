@@ -6,6 +6,7 @@ import Footer from "../_components/footer/Footer";
 import "./_Subscriptions.scss";
 import BlogComponent from "../_components/_blog-card/BlogComponent";
 import AbonnementComponent from "../_components/abonnements/AbonnementComponent";
+import TestimonialComponent from "../_components/testimonials/TestimonialComponent";
 
 export const metadata: Metadata = {
     title: "Subscriptions",
@@ -23,6 +24,7 @@ export default async function SubscriptionsPage() {
             </Header>
             <main className="main">
                 <AbonnementComponent />
+                <TestimonialComponent />
                 <BlogComponent />
             </main>
             <Footer />
