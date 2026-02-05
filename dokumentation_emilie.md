@@ -70,6 +70,10 @@ Jeg benytter React Icons, da de er nemme at bruge gennem en npm-installation. De
 
 Jeg benytter Embla Carousel i mit projekt, da det giver en let og clean implementering af carousel-funktionalitet uden at skulle udvikle al scroll- og swipe-logik fra bunden. Samtidig er det stadig let at kontrollere stylingen, og det kan derfor nemt tilpasses uden at funktionaliteten går i stykker.
 
+### ReactPlayer
+
+Jeg benytter ReactPlayer i mit projekt, da det er nemt at integrerer da det kan afspille forskellige typer i forskelligt format. Samtidig modtager ReactPlayer forskellige props, som gør det muligt selv at styre fx afspilningen, pause, mute osv. 
+
 ---
 
 ## Valg truffet under opgaveløsningen
