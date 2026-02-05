@@ -9,6 +9,8 @@ import Header from "../../_components/header/Header";
 import Footer from "../../_components/footer/Footer";
 import Title from "../../_components/title/Title";
 import Image from "next/image";
+import MyClassesComponent from "../../_components/classes/my-classes/MyClassesComponent";
+import ClassesComponent from "../../_components/classes/class-calendar/ClassesComponent";
 
 export const metadata: Metadata = {
     title: "Profile",
@@ -64,6 +66,8 @@ export default async function Profile({ params }: { params: Promise<{ id: string
                             {user.membership.title}
                         </h4>
                     </section>
+                    <MyClassesComponent />
+                    <ClassesComponent />
                     <MyComments />
                     <LogoutButton />
                 </section>

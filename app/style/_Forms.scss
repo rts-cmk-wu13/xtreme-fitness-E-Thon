@@ -2,7 +2,7 @@
 @use "./placeholders/components";
 @use "./variables/spacing" as space;
 
-form {
+form:not(.workouts__form) {
     @extend %form;
 }
 

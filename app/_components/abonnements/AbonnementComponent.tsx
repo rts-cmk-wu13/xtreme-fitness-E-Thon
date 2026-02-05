@@ -10,7 +10,6 @@ export default async function AbonnementComponent() {
     }
     const abonnementsData = await abonnementsRes.json();
     const abonnements = abonnementsData.data;
-    console.log("memberships: ",abonnements[0]);
 
     return (
         <section className="section__abonnements">

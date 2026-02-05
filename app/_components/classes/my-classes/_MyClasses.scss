@@ -1,0 +1,51 @@
+@use "../../../style/variables/color" as color;
+@use "../../../style/variables/spacing" as space;
+
+button {
+    margin-bottom: 0;
+}
+
+.overview {
+    width: 100%;
+}
+
+.classes {
+    &__table {
+        max-width: 100%;
+        width: 45%;
+        border-collapse: collapse;
+        color: color.$white;
+        margin: 0 auto;
+        text-align: left;
+        border: 1px solid color.$black;
+    }
+
+    &__thead {
+        background-color: color.$orange;
+
+        th {
+            text-transform: uppercase;
+            font-family: var(--font-teko);
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            padding: space.$spacing-16 space.$spacing-24;
+        }
+    }
+
+    &__tbody {
+        background-color: color.$black;
+        font-weight: 400;
+
+        td {
+            padding: 0 space.$spacing-24;
+        }
+    }
+
+    &__delete {
+        svg {
+            color: color.$orange;
+            width: 1.25rem;
+            height: auto;
+        }
+    }
+}
