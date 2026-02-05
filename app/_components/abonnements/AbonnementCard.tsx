@@ -4,20 +4,20 @@ import Button from "../buttons/Button";
 import { FaCheck } from "react-icons/fa";
 
 interface AbonnementCard {
-    id: number;
-    title: string;
-    price: number;
-    content: string;
-    createdAt: string;
-    asset: Asset;
-    advantages: Advantages[];
+    id: number
+    title: string
+    price: number
+    content: string
+    createdAt: string
+    asset: Asset
+    advantages: Advantages[]
 }
 
 interface Asset {
-    url: string;
-    altText: string;
-    width: number;
-    height: number;
+    url: string
+    altText: string
+    width: number
+    height: number
 }
 
 interface Advantages { description: String }

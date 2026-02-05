@@ -4,7 +4,8 @@
 
 // Font families
 body,
-textarea {
+textarea, 
+table {
   font-family: var(--font-ubuntu), sans-serif;
   font-style: normal;
 }
@@ -63,6 +64,11 @@ a,
 button {
   font-size: typo.$nav-link-size;
   font-weight: typo.$nav-link-weight;
+}
+
+table {
+  font-size: typo.$p-30-size;
+
 }
 
 //font colors by class

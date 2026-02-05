@@ -1,0 +1,61 @@
+@use "../../../style/variables/color" as color;
+@use "../../../style/variables/spacing" as space;
+@use "../../../style/variables/typography" as typo;
+@use "../../../style/mixins/mixins" as mix;
+
+button {
+    margin-bottom: 0;
+}
+
+.schedule {
+    width: 100%;
+    padding: space.$spacing-103 0;
+}
+
+.workouts {
+    &__table {
+        max-width: 100%;
+        width: 70%;
+        border-collapse: collapse;
+        color: color.$white;
+        margin: 0 auto;
+        border: 1px solid color.$black;
+        &:not(:last-of-type) {
+            text-align: left;
+        }
+    }
+
+    &__thead {
+        background-color: color.$orange;
+
+        th {
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            padding: space.$spacing-16 space.$spacing-24;
+        }
+    }
+
+    &__tbody {
+        background-color: color.$white;
+        font-weight: 400;
+        color: color.$black;
+
+        td {
+            padding: 0 space.$spacing-24;
+            height: 2rem;
+        }
+    }
+
+    &__enroll {
+        svg {
+            color: color.$green;
+            width: 3.625rem;
+            height: auto;
+        }
+    }
+
+    &__form {
+        @include mix.flex-col;
+        padding: space.$spacing-10 0;
+    }
+}
