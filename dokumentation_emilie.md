@@ -115,8 +115,8 @@ auth.post(
 
 Jeg har valgt at løse følgende tilvalgsopgaver:
 
-1. Blog – kommentarer  
-2. DEN ANDEN TILVALGSOPGAVE HER  
+2. Blog – kommentarer  
+3. Holdtilmelding 
 
 ---
 
