@@ -18,5 +18,4 @@ export default function Button({ text, className, href, classNamePlay }: ButtonP
             </div>
         </Link>
     )
-
 }

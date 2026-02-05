@@ -22,7 +22,7 @@ export default async function Profile({ params }: { params: Promise<{ id: string
     if (!token) {
         return <p>Unauthorized - Please login</p>
     }
-    const userRes = await fetch(`http://localhost:4000/users/me`, {
+    const userRes = await fetch('http://localhost:4000/users/me', {
         method: "GET",
         headers: {
             Authorization: `Bearer ${token}`

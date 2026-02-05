@@ -22,7 +22,7 @@ export default async function MyComments() {
         return <p>Please log in</p>;
     }
 
-    const commentsRes = await fetch("http://localhost:4000/comments", {
+    const commentsRes = await fetch('http://localhost:4000/comments', {
         next: { tags: ["comments"] }
     });
 

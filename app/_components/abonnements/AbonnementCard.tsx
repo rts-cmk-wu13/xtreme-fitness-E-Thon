@@ -26,8 +26,7 @@ export default function AbonnementCard({ abonnements }: { abonnements: Abonnemen
 
     return (
         <section className="abonnement">
-            {abonnements.map((abonnement) => {
-                return (
+            {abonnements.map((abonnement) => (
                     <article className="abonnement__card" key={abonnement.id}>
                         <div className="abonnement__image">
                             <Image
@@ -58,8 +57,7 @@ export default function AbonnementCard({ abonnements }: { abonnements: Abonnemen
                             />
                         </div>
                     </article>
-                )
-            })}
+                ))}
         </section>
     )
 }

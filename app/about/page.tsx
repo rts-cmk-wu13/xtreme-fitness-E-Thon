@@ -3,7 +3,6 @@ import Hero from "../_components/header/hero/Hero";
 import Navigation from "../_components/header/navigation/Navigation";
 import Header from "../_components/header/Header";
 import Footer from "../_components/footer/Footer";
-import Title from "../_components/title/Title";
 import "./_AboutUs.scss";
 import BlogComponent from "../_components/_blog-card/BlogComponent";
 import ContactForm from "../contact/contact-formula/ContactForm";

@@ -28,7 +28,7 @@ export async function registerUser(prevState: FormState, formData: FormData): Pr
         }
     }
 
-    const registerRes = await fetch(`http://localhost:4000/auth/register`, {
+    const registerRes = await fetch('http://localhost:4000/auth/register', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

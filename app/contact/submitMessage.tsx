@@ -24,7 +24,7 @@ export async function submitMessage(prevState: FormState, formData: FormData): P
         };
     }
 
-    const messageRes = await fetch("http://localhost:4000/messages", {
+    const messageRes = await fetch('http://localhost:4000/messages', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -25,8 +25,7 @@ export default function BlogCard({ posts }: { posts: BlogCard[] }) {
 
     return (
         <section className="blog">
-            {posts.map((post) => {
-                return (
+            {posts.map((post) => (
                     <article className="blog__card" key={post.id}>
                         <div className="blog__image">
                             <Image
@@ -48,8 +47,7 @@ export default function BlogCard({ posts }: { posts: BlogCard[] }) {
                             <Link href={`/blog/${post.id}`} className="button">Read more</Link>
                         </div>
                     </article>
-                )
-            })}
+                ))}
         </section>
     )
 }

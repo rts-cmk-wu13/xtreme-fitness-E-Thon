@@ -22,7 +22,7 @@ export async function getToken(prevState: FormState, formData: FormData): Promis
         }
     }
 
-    const loginRes = await fetch("http://localhost:4000/auth/login", {
+    const loginRes = await fetch('http://localhost:4000/auth/login', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
