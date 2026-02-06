@@ -1,0 +1,27 @@
+@use "../../../style/variables/color" as color;
+@use "../../../style/variables/spacing" as space;
+@use "../../../style/variables/typography" as typo;
+@use "../../../style/mixins/mixins" as mix;
+
+.about {
+    max-width: 100%;
+    width: 100%;
+    color: color.$white;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    &__info {
+        font-size: typo.$p-55-size;
+        text-transform: uppercase;
+        color: color.$white;
+        font-weight: 700;
+        white-space: nowrap;
+
+        span {
+            font-size: typo.$p-30-size;
+            font-family: var(--font-teko), sans-serif;
+            font-weight: 600;
+        }
+
+    }
+}

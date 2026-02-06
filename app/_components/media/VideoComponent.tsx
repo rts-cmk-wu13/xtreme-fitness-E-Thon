@@ -1,8 +1,12 @@
+import AboutNumbers from "../about-us/about-numbers/AboutNumbers"
 import "./_Video.scss"
 import Video from "./Video"
 
 export default function VideoComponent() {
     return (
-        <Video />
+        <section className="video">
+            <AboutNumbers />
+            <Video />
+        </section>
     )
 }
