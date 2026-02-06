@@ -3,7 +3,8 @@
 @use "../../style/mixins/mixins" as mix;
 
 .excercises {
-    width: 50%;
+    padding: 0 space.$pct-spacing-166;
+    margin: space.$spacing-103 auto;
 
     &____viewport {
         overflow: hidden;
@@ -15,12 +16,12 @@
     }
 
     &__slide {
-        flex: 0 0 200%;
+        flex: 0 0 (100% / 3);
         min-width: 0;
-        padding-left: space.$spacing-16;
+        padding-left: space.$pct-spacing-60;
         
         &__number {
-            width: 50%;
+            width: 90%;
             @include mix.flex-center;
             height: fit-content;
             user-select: none;
@@ -29,12 +30,11 @@
 
     //Buttons
     &__buttons {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: space.$spacing-24;
+        display: flex;
+        gap: space.$spacing-54;
         align-items: center;
-        width: fit-content;
-        margin: space.$spacing-16 20%;
+        justify-content: center;
+        margin: space.$spacing-64 0;
     }
 
     &__button {
@@ -43,12 +43,12 @@
         cursor: pointer;
         padding: 0;
         margin: 0;
-        border: 1px solid color.$white;
         width: space.$spacing-72;
         height: space.$spacing-72;
         border-radius: 50%;
         color: color.$white;
         @include mix.flex-center;
+        background-color: black;
 
         &__svg {
             width: 40%;
@@ -62,18 +62,6 @@
 }
 
 
-.section__excercisess {
+.section__excercises {
     padding: space.$spacing-113 space.$pct-spacing-14 space.$spacing-126;
-    background-image: url(/images/reviews_background.png);
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    height: fit-content;
-
-    & .title {
-        color: color.$white;
-        align-items: start;
-        margin: space.$spacing-24 auto space.$spacing-24 6.1%;
-        text-align: left;
-    }
 }

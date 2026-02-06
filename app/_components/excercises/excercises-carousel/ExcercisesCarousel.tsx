@@ -26,12 +26,12 @@ export default function ExcerciseCarousel(props: ExcercisesPropType) {
     } = usePrevNextButtons(emblaApi)
 
     return (
-        <div className="excercise">
-            <div className="excercise__viewport" ref={emblaRef}>
-                <div className="excercise__container">
+        <div className="excercises">
+            <div className="excercises__viewport" ref={emblaRef}>
+                <div className="excercises__container">
                     {excercises.map((excercise: Excercise) => (
-                        <div className="excercise__slide" key={excercise.id}>
-                            <div className="excercise__slide__number">
+                        <div className="excercises__slide" key={excercise.id}>
+                            <div className="excercises__slide__number">
                                 <ExcercisesCard excercises={[excercise]} />
                             </div>
                         </div>
@@ -39,7 +39,7 @@ export default function ExcerciseCarousel(props: ExcercisesPropType) {
                 </div>
             </div>
 
-            <div className="excercise__buttons">
+            <div className="excercises__buttons">
                 <PrevButton onClick={onPrevButtonClick} />
                 <NextButton onClick={onNextButtonClick} />
             </div>

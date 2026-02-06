@@ -8,7 +8,7 @@ export default async function ExcercisesComponent() {
     });
     const excerciseData = await excerciseRes.json();
     const excercises = excerciseData.data;
-    const OPTIONS: EmblaOptionsType = {align: 'start', containScroll: false, }
+    const OPTIONS: EmblaOptionsType = {align: 'start', containScroll: false }
 
     return (
         <section className="section__excercises">

@@ -1,0 +1,65 @@
+@use "../../../style/variables/color" as color;
+@use "../../../style/variables/spacing" as space;
+@use "../../../style/variables/typography" as typo;
+@use "../../../style/mixins/mixins" as mix;
+
+.excercise {
+    &__card {
+        @include mix.flex-between;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: fit-content;
+        background: color.$white;
+        border-radius: space.$spacing-20;
+        box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.25);
+        gap: space.$spacing-24;
+        padding: space.$spacing-64 space.$spacing-40;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: typo.$p-38-size;
+        font-family: var(--font-teko), sans-serif;
+        text-transform: uppercase;
+    }
+
+    &__teaser {
+        color: color.$grey-text;
+        line-height: 166.667%;
+        font-weight: 300;
+    }
+}
+
+dialog {
+    margin: auto space.$pct-spacing-226;
+    padding: space.$spacing-40;
+
+    img {
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+        padding-top: space.$spacing-20;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        color: color.$grey-text;
+        line-height: 166.667%;
+        font-weight: 300;
+        margin: space.$spacing-40 auto;
+        text-align:justify;
+        width: 80%;
+    }
+
+    button {
+        margin: 0 auto;
+    }
+
+    &::backdrop {
+        background-color: rgb(0 0 0 / 0.9);
+    }
+}
