@@ -5,7 +5,7 @@
 @use "../../style/placeholders/buttons";
 
 .abonnement {
-    @include mix.card-grid;
+    @include mix.card-grid();
 
     &__card {
         display: contents;

@@ -10,6 +10,7 @@ import TestimonialComponent from "./_components/testimonials/TestimonialComponen
 import AboutHomeComponent from "./_components/about-us/about-components/AboutHomeComponent";
 import NewsletterSignup from "./_components/newsletter-signup/NewsletterSignup";
 import ExcercisesComponent from "./_components/excercises/ExcercisesComponent";
+import CoachesComponent from "./_components/coaches-card/CoachesComponent";
 
 export const metadata: Metadata = {
   title: "Home | Xtreme Fitness",
@@ -34,8 +35,7 @@ export default function Home() {
         </section> */}
         <TestimonialComponent />
         <AbonnementComponent />
-        {/* <section className="section__coaches">
-        </section> */}
+        <CoachesComponent isHomePage={true} className="home-page" />
         <ContactForm
           className=""
         />

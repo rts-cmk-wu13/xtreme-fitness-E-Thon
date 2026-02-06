@@ -26,9 +26,9 @@ export default function FooterTop() {
                     />
                     <p>For us, training is about joy, quality, and results.</p>
                     <div>
-                        <a className="bottom__link" href="#facebook" aria-label="Follow us on Facebook"><FaFacebookF /></a>
-                        <a className="bottom__link" href="#twitter" aria-label="Follow us on Twitter"><FaTwitter /></a>
-                        <a className="bottom__link" href="#instagram" aria-label="Follow us on Instagram"><FaInstagram /></a>
+                        <a href="#facebook" aria-label="Follow us on Facebook"><FaFacebookF /></a>
+                        <a href="#twitter" aria-label="Follow us on Twitter"><FaTwitter /></a>
+                        <a href="#instagram" aria-label="Follow us on Instagram"><FaInstagram /></a>
                     </div>
 
                 </section>

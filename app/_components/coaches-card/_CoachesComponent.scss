@@ -1,0 +1,115 @@
+@use "../../style/variables/color" as color;
+@use "../../style/variables/spacing" as space;
+@use "../../style/variables/typography" as typo;
+@use "../../style/mixins/mixins" as mix;
+@use "../../style/placeholders/buttons";
+
+// COMPONENT
+.section__coaches {
+    padding: space.$spacing-103 0;
+
+    .coaches {
+        @include mix.card-grid(20rem, space.$spacing-54, space.$spacing-35);
+        justify-items: center;
+        margin-top: space.$spacing-64;
+    }
+
+    .coach {
+        &__image {
+            max-width: 14rem;
+            width: 100%;
+            height: auto;
+        }
+
+        &__card {
+            width: fit-content;
+            @include mix.flex-col;
+            align-items: center;
+            margin: space.$spacing-20 0;
+        }
+        
+        &__text {
+            text-align: center;
+            margin: space.$spacing-35 0;
+        }
+
+        &__name {
+            line-height: 140%;
+            font-size: typo.$p-38-size;
+            font-weight: 600;
+            font-family: var(--font-teko), sans-serif;
+        }
+
+        &__area {
+            font-size: typo.$p-25-size;
+        }
+
+        &__some {
+            @include mix.flex-between;
+            gap: space.$spacing-12;
+
+            a {
+                @include mix.flex-center;
+                padding: space.$spacing-20;
+                border-radius: 50%;
+
+                svg {
+                    width: 1.6875rem;
+                    height: 1.6875rem;
+                }
+            }
+        }
+    }
+
+    &.coach-page {
+        .coach {
+            &__name {
+                color: color.$black;
+            }
+
+            &__area {
+                color: color.$grey-info;
+            }
+
+            &__some {
+                a {
+                    background: color.$gradient-bg;
+
+                    svg {
+                        color: color.$white;
+                    }
+                }
+            }
+        }
+    }
+
+    &.home-page {
+        background: color.$gradient-bg;
+
+        .title {
+            h2, h3 {
+                color: color.$white;
+            }
+        }
+
+        .coach {
+            &__name {
+                color: color.$white;
+            }
+
+            &__area {
+                color: color.$white;
+            }
+
+            &__some {
+                a {
+                    background-color: color.$white;
+
+                    svg {
+                        color: color.$orange;
+                    }
+                }
+            }
+        }
+    }
+}
