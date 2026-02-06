@@ -6,9 +6,7 @@ import { useActionState, useRef } from "react";
 import { editComment } from "./editComment";
 import { FaPlay } from "react-icons/fa";
 
-interface EditCommentButtonProps {
-    commentId: number;
-}
+interface EditCommentButtonProps { commentId: number }
 
 export default function EditCommentButton({ commentId }: EditCommentButtonProps) {
     const [state, formAction, isPending] = useActionState(

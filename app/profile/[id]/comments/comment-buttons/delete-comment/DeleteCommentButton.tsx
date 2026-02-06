@@ -4,12 +4,11 @@ import "../_CommentButtons.scss";
 import { useActionState, useRef } from "react";
 import { deleteComment } from "./deleteComment";
 import { FaPlay } from "react-icons/fa";
+import type { CommentButton } from "../../../../../types/comments"
 
-interface DeleteCommentButtonProps {
-    commentId: number;
-}
+type CommentButtonProps = CommentButton
 
-export default function DeleteCommentButton({ commentId }: DeleteCommentButtonProps) {
+export default function DeleteCommentButton({ commentId }: CommentButtonProps) {
     const [state, formAction, isPending] = useActionState(
         deleteComment.bind(null, commentId),
         null

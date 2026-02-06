@@ -1,20 +1,9 @@
 import { cookies } from "next/headers";
 import "./_Comments.scss";
 import WriteComment from "./write-comment/WriteComment";
+import type { Comment } from "../../../types/comments";
 
-interface Comment {
-    id: number;
-    name: string;
-    email: string;
-    content: string;
-    postId: number;
-    userId: number;
-    createdAt?: string;
-}
-
-interface CommentsProps {
-    postId: string;
-}
+interface CommentsProps { postId: string }
 
 export default async function Comments({ postId }: CommentsProps) {
     let comments: Comment[] = [];

@@ -4,13 +4,11 @@ import { useActionState } from "react";
 import { submitComment } from "./submitComment";
 import MembersOnlyLogin from "../../../../_components/members-only/MembersOnlyLogin";
 import { FaPlay } from "react-icons/fa";
+import type { WriteComments } from "../../../../types/comments";
 import "../../../../style/_Forms.scss";
 import "./_WriteComment.scss";
 
-interface WriteCommentsProps {
-    postId: string;
-    isLoggedIn: boolean
-}
+type WriteCommentsProps = WriteComments
 
 export default function WriteComment({ postId, isLoggedIn }: WriteCommentsProps) {
     const [state, formAction, pending] = useActionState(submitComment.bind(null, postId), null);

@@ -2,21 +2,15 @@ import { cookies } from "next/headers";
 import Title from "../../title/Title";
 import "./_MyClasses.scss";
 import MyClasses from "./MyClasses";
+import type { Workout } from "../../../types/workouts"
 
-interface Workouts {
-    id: number
-    title: string
-    weekday: string
-    time: string
-    createdAt: string
-    updatedAt: string
-}
+type WorkoutsProps = Workout[]
 
 export default async function MyClassesComponent() {
     const cookieStore = await cookies()
     const token = cookieStore.get("token")?.value
 
-    let enrolledWorkouts: Workouts[] = []
+    let enrolledWorkouts: WorkoutsProps = []
 
     const workoutsRes = await fetch('http://localhost:4000/users/me', {
         headers: {
