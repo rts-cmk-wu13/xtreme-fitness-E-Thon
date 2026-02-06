@@ -112,6 +112,9 @@ auth.post(
   }
 );
 ```
+### Placering og design af tilmelding til nyhedsbrevet
+
+Jeg har valgt at placere mit nyhedsbres komponent (newsletter-signup) både på forsiden og under about. Dette føler jeg er relevant, da al vigtig information er at finde på forsiden foruden det, at et nyhedsbrev også giver information om fitness koncernen. 
 
 ---
 

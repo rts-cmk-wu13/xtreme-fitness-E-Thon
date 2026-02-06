@@ -2,13 +2,13 @@
 @use "./placeholders/components";
 @use "./variables/spacing" as space;
 
-form:not(.workouts__form) {
+form:not(.workouts__form):not(.newsletter__form) {
     @extend %form;
 }
 
 input[type="text"],
 input[type="tel"],
-input[type="email"],
+input[type="email"], 
 input[type="password"],
 textarea,
 select {

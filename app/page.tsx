@@ -8,6 +8,7 @@ import BlogComponent from "./_components/_blog-card/BlogComponent";
 import AbonnementComponent from "./_components/abonnements/AbonnementComponent";
 import TestimonialComponent from "./_components/testimonials/TestimonialComponent";
 import AboutHomeComponent from "./_components/about-us/about-components/AboutHomeComponent";
+import NewsletterSignup from "./_components/newsletter-signup/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Home | Xtreme Fitness",
@@ -39,9 +40,9 @@ export default function Home() {
           className=""
         />
         <BlogComponent />
+        <NewsletterSignup />
       </main>
       <Footer />
     </>
   );
 }
-

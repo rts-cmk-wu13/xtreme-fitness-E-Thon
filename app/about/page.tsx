@@ -8,6 +8,7 @@ import BlogComponent from "../_components/_blog-card/BlogComponent";
 import ContactForm from "../contact/contact-formula/ContactForm";
 import VideoComponent from "../_components/media/VideoComponent";
 import AboutAboutComponent from "../_components/about-us/about-components/AboutAboutComponent";
+import NewsletterSignup from "../_components/newsletter-signup/NewsletterSignup";
 
 export const metadata: Metadata = {
     title: "About Us",
@@ -30,6 +31,7 @@ export default async function AboutPage() {
                     className=""
                 />
                 <BlogComponent />
+                <NewsletterSignup />
             </main>
             <Footer />
         </>

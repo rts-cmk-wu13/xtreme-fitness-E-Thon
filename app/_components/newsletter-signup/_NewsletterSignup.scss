@@ -1,0 +1,41 @@
+@use "../../style/placeholders/buttons";
+@use "../../style/placeholders/components";
+@use "../../style/variables/spacing" as space;
+@use "../../style/variables/color" as color;
+@use "../../style/mixins/mixins" as mix;
+
+.newsletter {
+  &__wrapper {
+    width: 100%;
+    border-top: 2px solid color.$border;
+    margin: space.$spacing-103 space.$pct-spacing-122 space.$spacing-103 auto;
+    padding-top: space.$spacing-64;
+
+    &>p>span {
+      color: color.$orange;
+    }
+  }
+
+
+  &__form {
+    @include mix.flex-row;
+    gap: space.$spacing-40;
+    width: 60%;
+    margin: space.$spacing-64 auto;
+
+    input[type="email"],
+    select {
+      @extend %input;
+      padding: space.$spacing-16 space.$spacing-40;
+      width: 60%;
+      border: solid 2px color.$border;
+      min-width: space.$spacing-220;
+      height: fit-content;
+    }
+
+    button {
+      margin-left: auto;
+    }
+  }
+
+}
