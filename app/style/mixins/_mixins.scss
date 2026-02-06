@@ -62,15 +62,15 @@
   justify-content: start;
 }
 
-// card grid
-@mixin card-grid {
+// Card grid
+@mixin card-grid($min-width: space.$spacing-240, $margin-top-bottom: space.$spacing-54, $gap: space.$spacing-35) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
   grid-template-rows: auto;
-  gap: space.$spacing-35;
+  gap: $gap;
   max-width: 100%;
   width: 80%;
-  margin: space.$spacing-54 auto;
+  margin: $margin-top-bottom auto;
 }
 
 // Grid two columns
