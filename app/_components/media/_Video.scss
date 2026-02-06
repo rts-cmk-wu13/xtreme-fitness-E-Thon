@@ -1,0 +1,76 @@
+@use "../../style/variables/color" as color;
+@use "../../style/variables/spacing" as space;
+
+.video {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    max-width: 100%;
+    width: 100%;
+
+    &__player {
+        grid-area: 2 / 1 / 4 / 1;
+    }
+
+    // should have been in _AboutNumbers.scss but it was making errors that shoulnd't be possible
+    // Only way to get around was to move it here
+    .about.about {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        grid-template-rows: auto;
+        grid-area: 1 / 1 / 3 / 1;
+        background: color.$gradient-bg;
+        padding: space.$spacing-64 space.$pct-spacing-193 0;
+
+        >div {
+            background: none;
+            z-index: 100;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            height: fit-content;
+        }
+
+        &:first-child {
+            grid-column: 1;
+        }
+
+        &:nth-child(2) {
+            grid-column: 2;
+        }
+
+        &:nth-child(3) {
+            grid-column: 3;
+        }
+
+        &:last-child {
+            grid-column: 4;
+        }
+
+    }
+}
+
+.react-player {
+    // div {
+    //     display: grid !important;
+    //     grid-template-columns: 1fr !important;
+    //     grid-template-rows: 1fr !important;
+    //     align-items: center !important;
+    //     justify-items: center !important;
+    // }
+
+    &__preview {
+        aspect-ratio: 16 / 9;
+        width: 71%;
+        height: auto;
+        grid-area: 1 / 1;
+    }
+
+    // &__playicon {
+    //     width: 8.125rem;
+    //     height: auto;
+    //     grid-area: 1 / 1;
+    //     justify-self: center;
+    //     align-self: center;
+    // }
+}

@@ -8,6 +8,9 @@ body {
   @extend %base;
 }
 
+main {
+  box-sizing: border-box;
+}
 // SECTIONS
 .section {
   margin: 0 auto;

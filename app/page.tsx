@@ -7,6 +7,7 @@ import ContactForm from "./contact/contact-formula/ContactForm";
 import BlogComponent from "./_components/_blog-card/BlogComponent";
 import AbonnementComponent from "./_components/abonnements/AbonnementComponent";
 import TestimonialComponent from "./_components/testimonials/TestimonialComponent";
+import AboutHomeComponent from "./_components/about-us/about-components/AboutHomeComponent";
 
 export const metadata: Metadata = {
   title: "Home | Xtreme Fitness",
@@ -27,8 +28,7 @@ export default function Home() {
         </section> */}
         {/* <section className="section__offers">
         </section> */}
-        {/* <section className="section__about">
-        </section> */}
+        <AboutHomeComponent />
         {/* <section className="section__services">
         </section> */}
         <TestimonialComponent />

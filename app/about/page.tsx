@@ -6,6 +6,8 @@ import Footer from "../_components/footer/Footer";
 import "./_AboutUs.scss";
 import BlogComponent from "../_components/_blog-card/BlogComponent";
 import ContactForm from "../contact/contact-formula/ContactForm";
+import VideoComponent from "../_components/media/VideoComponent";
+import AboutAboutComponent from "../_components/about-us/about-components/AboutAboutComponent";
 
 export const metadata: Metadata = {
     title: "About Us",
@@ -22,6 +24,8 @@ export default async function AboutPage() {
                 />
             </Header>
             <main className="main">
+                <AboutAboutComponent />
+                <VideoComponent />
                 <ContactForm
                     className=""
                 />
