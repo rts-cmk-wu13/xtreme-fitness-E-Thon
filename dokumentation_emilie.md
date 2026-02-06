@@ -80,7 +80,8 @@ Jeg benytter ReactPlayer i mit projekt, da det er nemt at integrerer da det kan 
 
 ### Ændring af sproget
 
-Jeg har valgt at ændre sidens indhold til at være på engelsk hele vejen igennem (med undtagelse af udtalelser og blog, da dette er private personers egne ord). Dette er gjort for at skabe en mere international løsning, som giver bedre forudsætninger for oversættelse, da de fleste oversættelsesværktøjer er bedst egnet til engelsk. Derudover giver det en mere konsistent kodebase, da kodesproget generelt foregår på engelsk.
+Jeg har valgt at ændre sidens indhold til at være på engelsk hele vejen igennem (med undtagelse af udtalelser og blog, da dette er private personers egne ord). Dette er gjort for at skabe en mere international løsning, som giver bedre forudsætninger for oversættelse, da de fleste oversættelsesværktøjer er bedst egnet til engelsk. Derudover giver det en mere konsistent kodebase, da kodesproget generelt foregår på engelsk. 
+Eftersom API'et har fitness information skrevet på dansk (tjenester, abonnementer, øvelser osv), ville det her have været brugbart at benytte sig af en 3. parts oversætter til at oversætte API'ets data ved fetching. Da jeg først kom i tanke om dette, fredag, kunne jeg desværre ikke nå at implementere det i min kode, men mulige værktøjer kunne være brugt: Microsoft Translator API, LibreTranslate, Google Translate API.
 
 ### Ændring i API’et
 
