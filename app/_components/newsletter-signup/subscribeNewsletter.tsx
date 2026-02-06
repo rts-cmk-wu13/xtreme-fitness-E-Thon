@@ -31,10 +31,14 @@ export async function subscribeNewsletter(prevState: FormState, formData: FormDa
         );
 
         if (existingSubscriber) {
-            return { message: "This email is already subscribed to our newsletter" };
+            return {
+                message: "This email is already subscribed to our newsletter",
+                success: false,
+                values: validatedData.data
+            };
         }
     }
-    
+
     // POST to subscribe
     const subscriberRes = await fetch("http://localhost:4000/subscribers", {
         method: "POST",
@@ -43,8 +47,11 @@ export async function subscribeNewsletter(prevState: FormState, formData: FormDa
     });
 
     if (!subscriberRes.ok) {
-        return { message: "Failed to subscribe. Please try again later." };
+        return {
+            message: "Failed to subscribe. Please try again later.",
+            success: false
+        };
     }
 
-    return { message: "Thank you for subscribing!"};
+    return { message: "Thank you for subscribing!", success: true };
 }

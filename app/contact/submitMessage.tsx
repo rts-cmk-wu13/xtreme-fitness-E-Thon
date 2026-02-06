@@ -20,7 +20,8 @@ export async function submitMessage(prevState: FormState, formData: FormData): P
         const errors = z.treeifyError(validatedData.error);
         return {
             errors: errors.properties,
-            values: messageData
+            values: messageData,
+            success: false
         };
     }
 
@@ -35,9 +36,9 @@ export async function submitMessage(prevState: FormState, formData: FormData): P
     if (!messageRes.ok) {
         return {
             message: "Message failed to send",
-            values: validatedData.data
+            success: false
         };
     }
 
-    return { message: "Message sent successfully!" };
+    return { message: "Message sent successfully!", success: true };
 }
