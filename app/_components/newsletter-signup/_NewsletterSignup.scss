@@ -26,7 +26,7 @@
     input[type="email"],
     select {
       @extend %input;
-      padding: space.$spacing-16 space.$spacing-40;
+      padding: space.$spacing-15 space.$spacing-40;
       width: 60%;
       border: solid 2px color.$border;
       min-width: space.$spacing-220;

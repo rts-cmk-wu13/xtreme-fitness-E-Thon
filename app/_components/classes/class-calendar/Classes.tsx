@@ -3,17 +3,11 @@
 import { useActionState } from "react";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { enrollWorkout } from "./enrollWorkout";
+import type { Workout } from "../../../types/workouts"
 
-interface Workouts {
-    id: number
-    title: string
-    weekday: string
-    time: string
-    createdAt: string
-    updatedAt: string
-}
+type WorkoutsProps = { workouts: Workout[] }
 
-export default function Classes({ workouts }: { workouts: Workouts[] }) {
+export default function Classes({ workouts }: WorkoutsProps ) {
     const [state, formAction, pending] = useActionState(enrollWorkout, null);
 
     return (

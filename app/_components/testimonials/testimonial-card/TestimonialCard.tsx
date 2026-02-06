@@ -2,9 +2,7 @@ import "./_TestimonialCard.scss";
 import type { Testimonial } from "../../../types/testimonials"
 import Image from "next/image";
 
-interface TestimonialCardProps {
-    testimonials: Testimonial[];
-}
+type TestimonialCardProps = { testimonials: Testimonial[] }
 
 export default function TestimonialCard({ testimonials }: TestimonialCardProps) {
     return (

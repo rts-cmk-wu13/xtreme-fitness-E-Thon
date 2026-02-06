@@ -2,17 +2,7 @@ import { cookies } from "next/headers";
 import "./_MyComments.scss";
 import DeleteCommentButton from "./comment-buttons/delete-comment/DeleteCommentButton";
 import EditCommentButton from "./comment-buttons/edit-comment/EditCommentButton";
-
-interface Comment {
-    id: number;
-    name: string;
-    email: string;
-    content: string;
-    postId: number;
-    userId: number;
-    createdAt?: string;
-    updatedAt?: string;
-}
+import type { Comment } from "../../../types/comments";
 
 export default async function MyComments() {
     const cookieStore = await cookies();

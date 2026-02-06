@@ -5,36 +5,15 @@ import Footer from "../../_components/footer/Footer";
 import Comments from "./comments/Comments";
 import Hero from "../../_components/header/hero/Hero";
 import Header from "../../_components/header/Header";
+import type { Post } from "../../types/posts";
+import type { Asset } from "../../types/asset";
 import "./_Post.scss";
 
 export const metadata: Metadata = {
     title: "post",
 };
 
-interface Post {
-    id: number;
-    title: string;
-    teaser: string;
-    content: string;
-    author: string;
-    createdAt: string;
-    updatedAt: string;
-    asset: Asset;
-    comments?: any[];
-}
-
-interface Asset {
-    url: string;
-    altText: string;
-    width: number;
-    height: number;
-}
-
-interface PageProps {
-    params: {
-        id: string;
-    }
-}
+interface PageProps { params: { id: string } }
 
 export default async function PostPage({ params }: PageProps) {
     const resolvedParams = await params;

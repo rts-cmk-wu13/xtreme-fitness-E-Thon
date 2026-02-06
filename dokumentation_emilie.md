@@ -157,21 +157,21 @@ import "./_BlogComponent.scss";
 import Link from "next/link";
 
 interface BlogCard {
-  id: number;
-  title: string;
-  teaser: string;
-  content: string;
-  author: string;
-  createdAt: string;
-  updatedAt: string;
-  asset: Asset;
+  id: number
+  title: string
+  teaser: string
+  content: string
+  author: string
+  createdAt: string
+  updatedAt: string
+  asset: Asset
 }
 
 interface Asset {
-  url: string;
-  altText: string;
-  width: number;
-  height: number;
+  url: string
+  altText: string
+  width: number
+  height: number
 }
 
 export default function BlogCard({ posts }: { posts: BlogCard[] }) {

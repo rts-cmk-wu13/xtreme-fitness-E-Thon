@@ -2,27 +2,11 @@ import Image from "next/image"
 import "./_Abonnement.scss"
 import Button from "../buttons/Button";
 import { FaCheck } from "react-icons/fa";
+import type { AbonnementCard } from "../../types/abonnements";
 
-interface AbonnementCard {
-    id: number
-    title: string
-    price: number
-    content: string
-    createdAt: string
-    asset: Asset
-    advantages: Advantages[]
-}
+type AbonnementsPropType = { abonnements: AbonnementCard[] }
 
-interface Asset {
-    url: string
-    altText: string
-    width: number
-    height: number
-}
-
-interface Advantages { description: String }
-
-export default function AbonnementCard({ abonnements }: { abonnements: AbonnementCard[] }) {
+export default function AbonnementCard({ abonnements }:  AbonnementsPropType ) {
 
     return (
         <section className="abonnement">

@@ -9,6 +9,7 @@ import AbonnementComponent from "./_components/abonnements/AbonnementComponent";
 import TestimonialComponent from "./_components/testimonials/TestimonialComponent";
 import AboutHomeComponent from "./_components/about-us/about-components/AboutHomeComponent";
 import NewsletterSignup from "./_components/newsletter-signup/NewsletterSignup";
+import ExcercisesComponent from "./_components/excercises/ExcercisesComponent";
 
 export const metadata: Metadata = {
   title: "Home | Xtreme Fitness",
@@ -25,8 +26,7 @@ export default function Home() {
         />
       </Header>
       <main className="main">
-        {/* <section className="section__signup">
-        </section> */}
+        <ExcercisesComponent />
         {/* <section className="section__offers">
         </section> */}
         <AboutHomeComponent />

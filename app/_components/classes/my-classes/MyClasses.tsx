@@ -1,15 +1,9 @@
 import DeleteWorkoutButton from "./DeleteWorkoutButton"
+import type { Workout } from "../../../types/workouts"
 
-interface Workouts {
-    id: number
-    title: string
-    weekday: string
-    time: string
-    createdAt: string
-    updatedAt: string
-}
+type WorkoutsProps = { workouts: Workout[] }
 
-export default function MyClasses({ workouts }: { workouts: Workouts[] }) {
+export default function MyClasses({ workouts }: WorkoutsProps) {
     return (
         <table className="classes__table">
             <thead className="classes__thead">

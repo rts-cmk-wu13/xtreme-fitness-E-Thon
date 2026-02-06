@@ -1,27 +1,11 @@
 import Image from "next/image"
 import "./_BlogComponent.scss"
 import Link from "next/link";
+import type { BlogCard } from "../../types/blogs"
 
-interface BlogCard {
-    id: number;
-    title: string;
-    teaser: string;
-    content: string;
-    author: string;
-    createdAt: string;
-    updatedAt: string;
-    asset: Asset;
-}
+type BlogsPropType = { posts: BlogCard[] }
 
-interface Asset {
-    url: string;
-    altText: string;
-    width: number;
-    height: number;
-}
-
-
-export default function BlogCard({ posts }: { posts: BlogCard[] }) {
+export default function BlogCard({ posts }: BlogsPropType ) {
 
     return (
         <section className="blog">
