@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Profile({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
     const cookieStore = await cookies();
     const token = cookieStore.get("token")?.value;
 

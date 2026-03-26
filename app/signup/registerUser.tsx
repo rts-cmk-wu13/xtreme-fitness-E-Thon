@@ -8,7 +8,7 @@ import type { FormState } from "../types/form";
 const signupSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters"),
     email: z.string().email("Valid email is required"),
-    membershipId: z.string().min(1, "Please select your membership to sign up for"),
+    membershipId: z.coerce.number().min(1, "Please select your membership to sign up for"),
     password: z.string().min(6, "Password must be at least 6 characters"),
     confirmPassword: z.string().min(6, "Password must be at least 6 characters")
 }).refine((data) => data.password === data.confirmPassword, {
