@@ -10,15 +10,17 @@ const loginSchema = z.object({
     password: z.string().min(6, "Password must be at least 6 characters")
 })
 
-export async function getToken(prevState: FormState, formData: FormData): Promise<FormState> {
+export async function getToken(prevState: FormState | null, formData: FormData): Promise<FormState> {
     const loginData = Object.fromEntries(formData)
     const validatedData = loginSchema.safeParse(loginData)
 
     if (!validatedData.success) {
         const errors = z.treeifyError(validatedData.error)
         return {
+            ...prevState,
             errors: errors.properties,
-            values: loginData
+            values: loginData,
+            success: false
         }
     }
 
@@ -31,6 +33,7 @@ export async function getToken(prevState: FormState, formData: FormData): Promis
     })
     if (!loginRes.ok) {
         return { 
+            ...prevState,
             message: "incorrect email or password", 
             success: false,
             values: loginData
@@ -42,7 +45,6 @@ export async function getToken(prevState: FormState, formData: FormData): Promis
     cookieStore.set("token", data.accessToken);
     cookieStore.set("user-id", data.id);
 
-    // virker, men nulstiller formular ved fejlindtastningl, brug prevState
-
     redirect(`/profile/${data.id}`)
 }
+
