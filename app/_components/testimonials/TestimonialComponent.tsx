@@ -3,11 +3,20 @@ import TestimonialCarousel from './TestimonialCarousel';
 import Title from '../title/Title';
 
 export default async function TestimonialComponent() {
-    const testimonialRes = await fetch('http://localhost:4000/reviews', {
-        next: { revalidate: 60 }
-    });
-    const testimonialData = await testimonialRes.json();
-    const testimonials = testimonialData.data;
+    let testimonials = [];
+    try {
+        const testimonialRes = await fetch('http://localhost:4000/reviews', {
+            next: { revalidate: 60 }
+        });
+        if (!testimonialRes.ok) {
+            throw new Error(`Failed to fetch reviews: ${testimonialRes.status}`);
+        }
+        const testimonialData = await testimonialRes.json();
+        testimonials = testimonialData.data;
+    } catch (error) {
+        // API may be unavailable (e.g. during build); render section without testimonials
+        console.error("Could not fetch reviews:", error);
+    }
     const OPTIONS: EmblaOptionsType = {align: 'start', containScroll: false}
 
     return (
