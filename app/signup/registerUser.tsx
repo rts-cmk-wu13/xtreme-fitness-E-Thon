@@ -1,6 +1,5 @@
 "use server";
 
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod/v4";
 import type { FormState } from "../types/form";
@@ -43,11 +42,6 @@ export async function registerUser(prevState: FormState, formData: FormData): Pr
         }
 
     }
-
-    const data = await registerRes.json()
-    const cookieStore = await cookies();
-    cookieStore.set("token", data.accessToken);
-    cookieStore.set("user-id", data.id);
 
     redirect("/login")
 }
